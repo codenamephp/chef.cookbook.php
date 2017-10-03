@@ -18,4 +18,10 @@ if node['chef.cookbook.php']['install_apache'] == true
   end
 end
 
+node['chef.cookbook.php']['7.1']['additional_packages'].each do |additional_package|
+  package "install additional package #{additional_package}" do
+    package_name additional_package
+  end
+end
+
 include_recipe '::composer' if node['chef.cookbook.php']['install_composer']

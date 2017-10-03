@@ -78,4 +78,27 @@ describe 'chef.cookbook.php::7.1' do
       expect(chef_run).to include_recipe('chef.cookbook.php::composer')
     end
   end
+
+  context 'When install apache was set to false' do
+    let(:chef_run) do
+      ChefSpec::SoloRunner.new do |node|
+        node.normal['chef.cookbook.php']['7.1']['additional_packages'] = ['package1','package2','package3']
+      end.converge(described_recipe)
+    end
+
+    before do
+      stub_command("which php").and_return(0)
+      stub_command("/usr/sbin/apache2 -t").and_return(true)
+    end
+
+    it 'converges successfully' do
+      expect { chef_run }.to_not raise_error
+    end
+
+    it 'will install additional packages' do
+      expect(chef_run).to install_package('package1')
+      expect(chef_run).to install_package('package2')
+      expect(chef_run).to install_package('package3')
+    end
+  end
 end
