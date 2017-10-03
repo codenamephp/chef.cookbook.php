@@ -1,0 +1,1 @@
+default['chef.cookbook.php']['add_sury_repository'] = true
