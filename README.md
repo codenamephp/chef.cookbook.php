@@ -1,6 +1,6 @@
-# Chef Cookbook Apache2
+# Chef Cookbook PHP
 
-Cookbook to install apache2 as a wrapper coockbook for [Apache2][apache2_github]
+Cookbook to install php and apache2
 
 ## Requirements
 
@@ -8,24 +8,30 @@ Cookbook to install apache2 as a wrapper coockbook for [Apache2][apache2_github]
 
 - Debian Stretch
 
+### Supported PHP versions
+
+- 7.1
+
 ### Chef
 
 - Chef 13.0+
 
 ### Cookbook Depdendencies
 
+- [apt][apt_github]
+- [chef.cookbook.apache2][chef.cookbook.apache2_github]
+
 ## Usage
 
 Add the cookbook to your Berksfile:
 
 ```
-cookbook 'chef.cookbook.apache2', :github 'codenamephp/chef.cookbook.apache2'
+cookbook 'chef.cookbook.php', :github 'codenamephp/chef.cookbook.php'
 ```
 
-Add the cookbook to your runlist, e.g. in a role:
+Add the cookbook to your runlist of the php version you want, e.g. in a role:
 
-To install additional modules, you can either set/extend the `default['apache']['default_modules']`attribute or just
-add the corresponding `apache2::*` cookbooks for that module
+Keep in mind that the default recipe is a No-Op!
 
 ```json
 {
@@ -33,7 +39,7 @@ add the corresponding `apache2::*` cookbooks for that module
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-	  "recipe[chef.cookbook.apache2]"
+	  "recipe[chef.cookbook.php::7.1]"
   ]
 }
 ```
@@ -42,7 +48,19 @@ add the corresponding `apache2::*` cookbooks for that module
 
 #### Overwrites
 
-By default, the `default['apache']['listen']` is set to `['*:80', '*:443']` to listen to both http and https
-and therefore `default['apache']['default_modules']` is extend with `['ssl']` so mod_ssl module is activated by default.
+##### Common
+ 
+- `default['chef.cookbook.php']['install_apache'] = true` Set to false if you only want php as cli 
+- `default['chef.cookbook.php']['install_composer'] = true` Set to false if you don't want composer installed 
+ 
+##### Sury Repository
+
+By default, the repository from [Ondřej Surý][sury_url] is used as it provides the most recent and some older versions.
+
+- `default['chef.cookbook.php']['add_sury_repository'] = true` Set to false if you want to use the OS default channels. 
+  Be aware that not all PHP versions might be available.
 
 [apache2_github]: https://github.com/sous-chefs/apache2
+[apt_github]: https://github.com/chef-cookbooks/apt
+[chef.cookbook.apache2_github]: https://github.com/codenamephp/chef.cookbook.apache2
+[sury_url]: https://deb.sury.org/
