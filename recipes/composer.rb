@@ -1,9 +1,8 @@
 #
-# Cookbook:: chef.cookbook.php
+# Cookbook:: codenamephp_php
 # Recipe:: composer
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
-
 
 remote_file '/usr/bin/composer' do
   source 'http://getcomposer.org/composer.phar'

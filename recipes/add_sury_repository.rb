@@ -1,5 +1,5 @@
 #
-# Cookbook:: chef.cookbook.php
+# Cookbook:: codenamephp_php
 # Recipe:: add_sury_repository
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
@@ -12,5 +12,5 @@ apt_repository 'sury-php' do
   distribution 'stretch'
   components ['main']
   key 'https://packages.sury.org/php/apt.gpg'
-  only_if { node['chef.cookbook.php']['add_sury_repository'] }
+  only_if { node['codenamephp_php']['add_sury_repository'] }
 end

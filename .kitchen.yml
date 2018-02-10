@@ -9,16 +9,20 @@ verifier:
   name: inspec
 
 platforms:
-  - name: debian-9.1
+  - name: debian-9.2
 
 suites:
   - name: default
     run_list:
-      - recipe[chef.cookbook.php::default]
-      - recipe[chef.cookbook.php::add_sury_repository]
-      - recipe[chef.cookbook.php::7.1]
-      - recipe[chef.cookbook.php::composer]
+      - recipe[codenamephp_php::default]
     verifier:
       inspec_tests:
         - test/smoke/default
+    attributes:
+  - name: "7.1"
+    run_list:
+      - recipe[codenamephp_php::7.1]
+    verifier:
+      inspec_tests:
+        - test/smoke/7.1
     attributes:

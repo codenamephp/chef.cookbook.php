@@ -1,13 +1,13 @@
 #
-# Cookbook:: chef.cookbook.php
+# Cookbook:: codenamephp_php
 # Spec:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef.cookbook.php::composer' do
-  targetFile = '/usr/bin/composer'
+describe 'codenamephp_php::composer' do
+  target_file = '/usr/bin/composer'
 
   context 'When all attributes are default' do
     let(:chef_run) do
@@ -16,7 +16,7 @@ describe 'chef.cookbook.php::composer' do
     end
 
     before do
-      stub_command("which php").and_return(false)
+      stub_command('which php').and_return(false)
     end
 
     it 'converges successfully' do
@@ -24,7 +24,7 @@ describe 'chef.cookbook.php::composer' do
     end
 
     it 'wont install composer since php is not installed' do
-      expect(chef_run).to_not create_remote_file_if_missing(targetFile)
+      expect(chef_run).to_not create_remote_file_if_missing(target_file)
     end
   end
 
@@ -35,7 +35,7 @@ describe 'chef.cookbook.php::composer' do
     end
 
     before do
-      stub_command("which php").and_return(true)
+      stub_command('which php').and_return(true)
     end
 
     it 'converges successfully' do
@@ -43,9 +43,9 @@ describe 'chef.cookbook.php::composer' do
     end
 
     it 'will install composer since php installed' do
-      expect(chef_run).to create_remote_file_if_missing(targetFile).with(
-          source: 'http://getcomposer.org/composer.phar',
-          mode: '0777',
+      expect(chef_run).to create_remote_file_if_missing(target_file).with(
+        source: 'http://getcomposer.org/composer.phar',
+        mode: '0777'
       )
     end
   end

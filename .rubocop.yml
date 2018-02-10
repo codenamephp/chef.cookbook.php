@@ -1,0 +1,21 @@
+AllCops:
+  Exclude:
+    - 'bin/**'
+    - 'bundler/**'
+
+Metrics/LineLength:
+  Max: 160
+
+Metrics/BlockLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'test/smoke/**/*.rb'
+
+Metrics/ModuleLength:
+  Exclude:
+    - 'Rakefile'
+    - '**/*.rake'
+    - 'spec/**/*.rb'
+    - 'test/smoke/**/*.rb'

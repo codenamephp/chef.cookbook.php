@@ -1,0 +1,47 @@
+language: ruby
+sudo: required
+dist: trusty
+
+branches:
+  only:
+  - master
+  - dev
+  - /^v\d+\.\d+(\.\d+)?(-\S*)?$/
+  
+services: docker
+
+env:
+  global:
+    - ENV="ci"
+    - secure: "ZjRF6aQFkdwGPvBLn20wvGu8uoB3uwQIC2rNrIyMgpbQ07JOJX7JqSfCZrPYXxAh3yB9OLbghI8UtLjAplPkqx8rNyVbSr4aY9NzNslluAkf1pw88NYQUK4Lwa/cGRBvb++Dvde4L4UcP8NScKXp4FMbud3dXOciBNddsGQyppLsn6EfVSWO7D7NkI1BtkX9IFwxU0TlyXwKekvWe7lgyJhk8ka8F6LucvOcCHkqX5AN9ZlpXirNfsmFDoQlSZkJVD6PuKTGl88Nk1OC0Odiqs+no2sXI81zHnTfQel0TKv1dFHYaHHLmwLtflGMmHJKVARfxn8hXDB21KBiCIbvN0NZGRvUS74ZPu3Vu9UEX5LI5bUWgoApg7YSaB4tOcf0rLHg5mmuz5/OSBy42Jtav6Xj6mNkS8F2WLVDIU30EODm0l6V93ViBTi91TODhmzZuDM62Ar4pBairLIcO1nsGMnCeRG7+u0qcDq4cfCs8QxFGPaKj15VN13Tt4n8/kynRJviBeHJsvmC2SRMsjLWe3vODxUhTgYR/7+BXpAeVOe2RU67bqtgNzxXLnqI/HeliX7uLROwoCCHwk1oysWoSILFJJC0XjchlqR186gjKPd/hqgY00tAsC0f2ZAkYYICD8OuKd0H2tJYtVX3HevUHPaXThklZjNbnJH9F8Wu/wk="
+addons:
+  apt:
+    sources:
+    - chef-current-trusty
+    packages:
+    - chefdk
+
+install:
+  - sudo iptables -L DOCKER || ( echo "DOCKER iptables chain missing" ; sudo iptables -N DOCKER )
+  - eval "$(chef shell-init bash)"
+  - chef --version
+  - cookstyle --version
+  - foodcritic --version
+
+script:
+  - chef exec rake
+  
+before_deploy:
+  - openssl aes-256-cbc -K $encrypted_4c0189a98bd3_key -iv $encrypted_4c0189a98bd3_iv -in codenamephp.pem.enc -out codenamephp.pem -d
+  - git config --local user.name "Travis CI"
+  - git config --local user.email "travis@codename-php.de"
+  - git remote set-url --push origin "https://$GH_TOKEN@github.com/codenamephp/chef.cookbook.mysql.git"
+deploy:
+  - provider: script
+    on:
+      branch: master
+    skip_cleanup: true
+    script: chef exec rake release
+  
+notifications:
+  slack: codenamephp:4LpipONUdfAZ5ebatYC7Egmb

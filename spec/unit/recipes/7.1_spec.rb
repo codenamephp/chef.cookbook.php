@@ -1,12 +1,12 @@
 #
-# Cookbook:: chef.cookbook.php
+# Cookbook:: codenamephp_php
 # Spec:: default
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
 require 'spec_helper'
 
-describe 'chef.cookbook.php::7.1' do
+describe 'codenamephp_php::7.1' do
   context 'When all attributes are default' do
     let(:chef_run) do
       runner = ChefSpec::SoloRunner.new
@@ -14,8 +14,8 @@ describe 'chef.cookbook.php::7.1' do
     end
 
     before do
-      stub_command("/usr/sbin/apache2 -t").and_return(true)
-      stub_command("which php").and_return(0)
+      stub_command('/usr/sbin/apache2 -t').and_return(true)
+      stub_command('which php').and_return(0)
     end
 
     it 'converges successfully' do
@@ -23,11 +23,13 @@ describe 'chef.cookbook.php::7.1' do
     end
 
     it 'includes add_sury_repository recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.php::add_sury_repository')
+      expect(chef_run).to include_recipe('codenamephp_php::add_sury_repository')
     end
 
     it 'installs php7.1 cli' do
-      expect(chef_run).to install_package('install php7.1 from package').with(package_name: chef_run.node.default['chef.cookbook.php']['7.1']['package_name']['cli'])
+      expect(chef_run).to install_package('install php7.1 from package').with(
+        package_name: chef_run.node.default['codenamephp_php']['7.1']['package_name']['cli']
+      )
     end
 
     it 'includes apache2 cookbook' do
@@ -35,23 +37,25 @@ describe 'chef.cookbook.php::7.1' do
     end
 
     it 'installs php7.1 apache modules' do
-      expect(chef_run).to install_package('install apache php modules').with(package_name: chef_run.node.default['chef.cookbook.php']['7.1']['package_name']['apache'])
+      expect(chef_run).to install_package('install apache php modules').with(
+        package_name: chef_run.node.default['codenamephp_php']['7.1']['package_name']['apache']
+      )
     end
 
     it 'includes composer recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.php::composer')
+      expect(chef_run).to include_recipe('codenamephp_php::composer')
     end
   end
 
   context 'When install apache was set to false' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new do |node|
-        node.normal['chef.cookbook.php']['install_apache'] = false
+        node.normal['codenamephp_php']['install_apache'] = false
       end.converge(described_recipe)
     end
 
     before do
-      stub_command("which php").and_return(0)
+      stub_command('which php').and_return(0)
     end
 
     it 'converges successfully' do
@@ -59,11 +63,13 @@ describe 'chef.cookbook.php::7.1' do
     end
 
     it 'includes add_sury_repository recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.php::add_sury_repository')
+      expect(chef_run).to include_recipe('codenamephp_php::add_sury_repository')
     end
 
     it 'installs php7.1 cli' do
-      expect(chef_run).to install_package('install php7.1 from package').with(package_name: chef_run.node.default['chef.cookbook.php']['7.1']['package_name']['cli'])
+      expect(chef_run).to install_package('install php7.1 from package').with(
+        package_name: chef_run.node.default['codenamephp_php']['7.1']['package_name']['cli']
+      )
     end
 
     it 'does not includ apache2 cookbook' do
@@ -75,20 +81,20 @@ describe 'chef.cookbook.php::7.1' do
     end
 
     it 'includes composer recipe' do
-      expect(chef_run).to include_recipe('chef.cookbook.php::composer')
+      expect(chef_run).to include_recipe('codenamephp_php::composer')
     end
   end
 
   context 'When install apache was set to false' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new do |node|
-        node.normal['chef.cookbook.php']['7.1']['additional_packages'] = ['package1','package2','package3']
+        node.normal['codenamephp_php']['7.1']['additional_packages'] = %w[package1 package2 package3]
       end.converge(described_recipe)
     end
 
     before do
-      stub_command("which php").and_return(0)
-      stub_command("/usr/sbin/apache2 -t").and_return(true)
+      stub_command('which php').and_return(0)
+      stub_command('/usr/sbin/apache2 -t').and_return(true)
     end
 
     it 'converges successfully' do
