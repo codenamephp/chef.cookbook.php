@@ -26,7 +26,7 @@ Cookbook to install php and apache2
 Add the cookbook to your Berksfile:
 
 ```
-cookbook 'chef.cookbook.php', :github 'codenamephp/chef.cookbook.php'
+cookbook 'codename_php', :github 'codenamephp/codename_php'
 ```
 
 Add the cookbook to your runlist of the php version you want, e.g. in a role:
@@ -39,7 +39,7 @@ Keep in mind that the default recipe is a No-Op!
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-	  "recipe[chef.cookbook.php::7.1]"
+	  "recipe[codename_php::7.1]"
   ]
 }
 ```
@@ -50,14 +50,15 @@ Keep in mind that the default recipe is a No-Op!
 
 ##### Common
  
-- `default['chef.cookbook.php']['install_apache'] = true` Set to false if you only want php as cli 
-- `default['chef.cookbook.php']['install_composer'] = true` Set to false if you don't want composer installed 
+- `default['codename_php']['install_apache'] = true` Set to false if you only want php as cli 
+- `default['codename_php']['install_composer'] = true` Set to false if you don't want composer installed 
+- `default['codename_php']['php_recipe'] = '::7.1'` Which php recipe will be used. This recipe will be included by the default recipe. Can either be one from this cookbook or a completely different one
  
 ##### Sury Repository
 
 By default, the repository from [Ondřej Surý][sury_url] is used as it provides the most recent and some older versions.
 
-- `default['chef.cookbook.php']['add_sury_repository'] = true` Set to false if you want to use the OS default channels. 
+- `default['codename_php']['add_sury_repository'] = true` Set to false if you want to use the OS default channels. 
   Be aware that not all PHP versions might be available.
 
 [apache2_github]: https://github.com/sous-chefs/apache2
