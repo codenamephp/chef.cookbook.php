@@ -10,6 +10,7 @@ Cookbook to install php and apache2
 
 ### Supported PHP versions
 
+- 5.6
 - 7.1
 
 ### Chef
