@@ -11,7 +11,7 @@ package 'install php7.1 from package' do
 end
 
 if node['codenamephp_php']['install_apache'] == true
-  include_recipe 'chef.cookbook.apache2'
+  include_recipe 'codenamephp_apache2'
 
   package 'install apache php modules' do
     package_name node['codenamephp_php']['7.1']['package_name']['apache']

@@ -1,4 +1,5 @@
 # Chef Cookbook PHP
+[![Build Status](https://travis-ci.org/codenamephp/chef.cookbook.php.svg?branch=dev)](https://travis-ci.org/codenamephp/chef.cookbook.php)
 
 Cookbook to install php and apache2
 
@@ -20,19 +21,20 @@ Cookbook to install php and apache2
 ### Cookbook Depdendencies
 
 - [apt][apt_github]
-- [chef.cookbook.apache2][chef.cookbook.apache2_github]
+- [codenamephp_apache2][chef.cookbook.apache2_github]
 
 ## Usage
 
 Add the cookbook to your Berksfile:
 
 ```
-cookbook 'codename_php', :github 'codenamephp/codename_php'
+cookbook 'codename_php'
 ```
 
-Add the cookbook to your runlist of the php version you want, e.g. in a role:
+Add the cookbook to your runlist. By default, the recipe specified in `default['codename_php']['php_recipe']` will be included. You can add additional 
+php version by adding the recipe to your runlist.
 
-Keep in mind that the default recipe is a No-Op!
+This example will install the default version and php5.6
 
 ```json
 {
@@ -40,7 +42,8 @@ Keep in mind that the default recipe is a No-Op!
   "chef_type": "role",
   "json_class": "Chef::Role",
   "run_list": [
-	  "recipe[codename_php::7.1]"
+    "recipe[codename_php::5.6]"
+	  "recipe[codename_php]"
   ]
 }
 ```

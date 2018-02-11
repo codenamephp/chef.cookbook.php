@@ -33,7 +33,7 @@ describe 'codenamephp_php::5.6' do
     end
 
     it 'includes apache2 cookbook' do
-      expect(chef_run).to include_recipe('chef.cookbook.apache2')
+      expect(chef_run).to include_recipe('codenamephp_apache2')
     end
 
     it 'installs php5.6 apache modules' do

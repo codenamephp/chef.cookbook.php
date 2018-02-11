@@ -1,12 +1,20 @@
 # Change Log
 
-## [1.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/1.0.0) (2018-02-10)
+## [1.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/1.1.0) (2018-02-11)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.0.0...1.1.0)
+
+**Implemented enhancements:**
+
+- Change apache dependency [\#4](https://github.com/codenamephp/chef.cookbook.php/issues/4)
+
+## [v1.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v1.0.0) (2018-02-10)
 **Implemented enhancements:**
 
 - Add PHP5.6 support [\#1](https://github.com/codenamephp/chef.cookbook.php/issues/1)
 
 **Merged pull requests:**
 
+- Release 1.0.0 [\#3](https://github.com/codenamephp/chef.cookbook.php/pull/3) ([bastianschwarz](https://github.com/bastianschwarz))
 - Release 0.3.0 [\#2](https://github.com/codenamephp/chef.cookbook.php/pull/2) ([bastianschwarz](https://github.com/bastianschwarz))
 
 
