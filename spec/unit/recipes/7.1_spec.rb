@@ -33,7 +33,7 @@ describe 'codenamephp_php::7.1' do
     end
 
     it 'includes apache2 cookbook' do
-      expect(chef_run).to include_recipe('chef.cookbook.apache2')
+      expect(chef_run).to include_recipe('codenamephp_apache2')
     end
 
     it 'installs php7.1 apache modules' do
@@ -73,7 +73,7 @@ describe 'codenamephp_php::7.1' do
     end
 
     it 'does not includ apache2 cookbook' do
-      expect(chef_run).to_not include_recipe('chef.cookbook.apache2')
+      expect(chef_run).to_not include_recipe('codenamephp_apache2')
     end
 
     it 'does not install php7.1 apache modules' do
