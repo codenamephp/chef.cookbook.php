@@ -1,5 +1,3 @@
-# # encoding: utf-8
-
 # Inspec test for recipe codenamephp_php::default
 
 # The Inspec reference, with examples and extensive documentation, can be
