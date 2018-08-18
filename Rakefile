@@ -11,6 +11,10 @@ def use_dokken?
   ENV['USE_DOKKEN'] || ci?
 end
 
+def concurrency
+  ENV['CONCURRENCY'] || 4
+end
+
 task default: %w[style unit integration documentation]
 
 namespace :git do
@@ -101,13 +105,13 @@ namespace :integration do
 
   desc 'Run Test Kitchen integration tests using vagrant'
   task :vagrant, [:regexp, :action, :concurrency] do |_t, args|
-    args.with_defaults(regexp: 'all', action: 'test', concurrency: 4)
+    args.with_defaults(regexp: 'all', action: 'test', concurrency: concurrency)
     run_kitchen(args.action, args.regexp, args.concurrency.to_i)
   end
 
   desc 'Run Test Kitchen integration tests using dokken'
   task :dokken, [:regexp, :action, :concurrency] do |_t, args|
-    args.with_defaults(regexp: 'all', action: 'test', concurrency: 4)
+    args.with_defaults(regexp: 'all', action: 'test', concurrency: concurrency)
     run_kitchen(args.action, args.regexp, args.concurrency.to_i, local_config: '.kitchen.dokken.yml')
   end
 end

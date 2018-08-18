@@ -13,6 +13,7 @@ services: docker
 env:
   global:
     - ENV="ci"
+    - CONCURRENCY=1
     - secure: "KlrhCf/nRXd4szf51jfW1U5qyTHK4L1ioDjuWwUWoXPyuRqfMdDS1xbI92UZPQzfW46odRr2TLFrA/WxvV2pzS3ByB2g85nJjYcf2sokXL+w8VKs0TGvra0njOwU6rm8ZTTp4TB4nLOlhkTXCAP2GunkVX8DXYTAVO1QX68HJI/vDyRbLXFJavytyGJeaJnxguLKLB7acgHk1mxw8LPsZya0CVgNzaVOcWsZRAwmmP3gm5myofpxKC+w8IufkXaO//HbDsgsLWQL3AwS6+SPU3RrtA47Cssz5BttfZeSSma0olw8phE8UHcNoD6z9rZnokv+p6e3vov3zjJKapPBkOQKDSYL+1d9MapHx4GJEQy6MrCNuhSLF0tQkESrmuul/YOm2qiexXgwx3NG+0VBunG5xyDprfGLXmWzHCLPKaBVMABnJwpyBbSOya3YoSzAuyeP6a7yJSazB5Vm3GW9+fCLP2c1Dd8UYwZVmlEtLBQilB6PkIgixZvypLRpKOX6BBLWYlHKzKQzxx37tYdQPB8OFbQs5nuBYW5uDqS75etWE3Gv11uFk6yk+PZnNTVJeShH4Rvw91psZnJUswpCt9BfLBjefXn6NJQpiDnmCITkthfv/np/giAYOKED1cqxTpwx8wYOo+0Le2npa8yyP02qt751xblDPUvYZWiu8Bw="
 addons:
   apt:
