@@ -6,7 +6,7 @@
 
 require 'spec_helper'
 
-describe 'codenamephp_php::5.6' do
+describe 'codenamephp_php::7.2' do
   context 'When all attributes are default' do
     let(:chef_run) do
       runner = ChefSpec::SoloRunner.new
@@ -26,9 +26,9 @@ describe 'codenamephp_php::5.6' do
       expect(chef_run).to include_recipe('codenamephp_php::add_sury_repository')
     end
 
-    it 'installs php5.6 cli' do
-      expect(chef_run).to install_package('install php5.6 from package').with(
-        package_name: chef_run.node.default['codenamephp_php']['5.6']['package_name']['cli']
+    it 'installs php7.2 cli' do
+      expect(chef_run).to install_package('install php7.2 from package').with(
+        package_name: chef_run.node.default['codenamephp_php']['7.2']['package_name']['cli']
       )
     end
 
@@ -36,14 +36,18 @@ describe 'codenamephp_php::5.6' do
       expect(chef_run).to include_recipe('codenamephp_apache2')
     end
 
-    it 'installs php5.6 apache modules' do
+    it 'installs php7.2 apache modules' do
       expect(chef_run).to install_package('install apache php modules').with(
-        package_name: chef_run.node.default['codenamephp_php']['5.6']['package_name']['apache']
+        package_name: chef_run.node.default['codenamephp_php']['7.2']['package_name']['apache']
       )
     end
 
     it 'includes composer recipe' do
       expect(chef_run).to include_recipe('codenamephp_php::composer')
+    end
+
+    it 'includes xdebug recipe' do
+      expect(chef_run).to include_recipe('codenamephp_php::xdebug')
     end
   end
 
@@ -66,33 +70,29 @@ describe 'codenamephp_php::5.6' do
       expect(chef_run).to include_recipe('codenamephp_php::add_sury_repository')
     end
 
-    it 'installs php5.6 cli' do
-      expect(chef_run).to install_package('install php5.6 from package').with(
-        package_name: chef_run.node.default['codenamephp_php']['5.6']['package_name']['cli']
+    it 'installs php7.2 cli' do
+      expect(chef_run).to install_package('install php7.2 from package').with(
+        package_name: chef_run.node.default['codenamephp_php']['7.2']['package_name']['cli']
       )
     end
 
     it 'does not includ apache2 cookbook' do
-      expect(chef_run).to_not include_recipe('chef.cookbook.apache2')
+      expect(chef_run).to_not include_recipe('codenamephp_apache2')
     end
 
-    it 'does not install php5.6 apache modules' do
+    it 'does not install php7.2 apache modules' do
       expect(chef_run).to_not install_package('install apache php modules')
     end
 
     it 'includes composer recipe' do
       expect(chef_run).to include_recipe('codenamephp_php::composer')
     end
-
-    it 'includes xdebug recipe' do
-      expect(chef_run).to include_recipe('codenamephp_php::xdebug')
-    end
   end
 
   context 'When install apache was set to false' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new do |node|
-        node.normal['codenamephp_php']['5.6']['additional_packages'] = %w[package1 package2 package3]
+        node.normal['codenamephp_php']['7.2']['additional_packages'] = %w[package1 package2 package3]
       end.converge(described_recipe)
     end
 

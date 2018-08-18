@@ -11,7 +11,25 @@ def use_dokken?
   ENV['USE_DOKKEN'] || ci?
 end
 
-task default: %w[style unit integration]
+def concurrency
+  ENV['CONCURRENCY'] || 4
+end
+
+task default: %w[style unit integration documentation]
+
+namespace :git do
+  desc 'Setting up git for pushing'
+  task :setup do
+    sh 'git config --local user.name "Travis CI"'
+    sh 'git config --local user.email "travis@codename-php.de"'
+    sh 'git remote set-url --push origin "https://' + ENV['GH_TOKEN'].to_s + '@github.com/codenamephp/chef.cookbook.php.git"', verbose: false do |ok, status|
+      unless ok
+        raise "Command failed with status (#{status.exitstatus}): " \
+              'git remote set-url --push origin "https://[GITHUB_TOKEN_HIDDEN]@github.com/codenamephp/chef.cookbook.php.git"'
+      end
+    end
+  end
+end
 
 namespace :style do
   require 'rubocop/rake_task'
@@ -59,31 +77,65 @@ namespace :integration do
   # @param regexp [String] regular expression to match against instance names.
   # @param loader_config [Hash] loader configuration options.
   # @return void
-  def run_kitchen(action, regexp, loader_config = {})
+  def run_kitchen(action, regexp, concurrency, loader_config = {})
     action = 'test' if action.nil?
     require 'kitchen'
     Kitchen.logger = Kitchen.default_file_logger
     config = { loader: Kitchen::Loader::YAML.new(loader_config) }
-    kitchen_instances(regexp, config).each { |i| i.send(action) }
+
+    call_threaded(kitchen_instances(regexp, config), action, concurrency)
+  end
+
+  # Calls a method on a list of objects in concurrent threads.
+  #
+  # @param objects [Array] list of objects.
+  # @param method_name [#to_s] method to call on the objects.
+  # @param concurrency [Integer] number of objects to call the method on concurrently.
+  # @return void
+  def call_threaded(objects, method_name, concurrency)
+    puts "method_name: #{method_name}, concurrency: #{concurrency}"
+    threads = []
+    raise 'concurrency must be > 0' if concurrency < 1
+    objects.each do |obj|
+      sleep 3 until threads.map(&:alive?).count(true) < concurrency
+      threads << Thread.new { obj.method(method_name).call }
+    end
+    threads.map(&:join)
   end
 
   desc 'Run Test Kitchen integration tests using vagrant'
-  task :vagrant, %i[regexp action] do |_t, args|
-    run_kitchen(args.action, args.regexp)
+  task :vagrant, [:regexp, :action, :concurrency] do |_t, args|
+    args.with_defaults(regexp: 'all', action: 'test', concurrency: concurrency)
+    run_kitchen(args.action, args.regexp, args.concurrency.to_i)
   end
 
   desc 'Run Test Kitchen integration tests using dokken'
-  task :dokken, %i[regexp action] do |_t, args|
-    run_kitchen(args.action, args.regexp, local_config: '.kitchen.dokken.yml')
+  task :dokken, [:regexp, :action, :concurrency] do |_t, args|
+    args.with_defaults(regexp: 'all', action: 'test', concurrency: concurrency)
+    run_kitchen(args.action, args.regexp, args.concurrency.to_i, local_config: '.kitchen.dokken.yml')
   end
 end
 
 desc 'Run Test Kitchen integration tests'
-task :integration, %i[regexp action] => ci? || use_dokken? ? %w[integration:dokken] : %w[integration:vagrant]
+task :integration, %i[regexp action concurrency] => ci? || use_dokken? ? %w[integration:dokken] : %w[integration:vagrant]
+
+namespace :documentation do
+  desc 'Generate changelog from current commit message'
+  task changelog_commit: ['git:setup'] do
+    match = Regexp.new('\[RELEASE\s([\d\.]+)\]').match(ENV['TRAVIS_COMMIT_MESSAGE'])
+    unless match.nil?
+      sh 'github_changelog_generator --future-release ' + match[1].to_s
+      sh 'git status'
+      sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH']
+    end
+  end
+end
+desc 'Run the documentation cycle'
+task documentation: %w[documentation:changelog_commit]
 
 namespace :release do
   desc 'Tag and release to supermarket with stove'
-  task :stove do
+  task stove: ['git:setup'] do
     sh 'chef exec stove --username codenamephp --key ./codenamephp.pem'
   end
 
