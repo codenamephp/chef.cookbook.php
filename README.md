@@ -58,6 +58,7 @@ This example will install php5.6 and php7.1 where php7.1 will be used for apache
  
 - `default['codename_php']['install_apache'] = true` Set to false if you only want php as cli 
 - `default['codename_php']['install_composer'] = true` Set to false if you don't want composer installed 
+- `default['codename_php']['install_xdebug'] = true` Set to false if you don't want xdebug installed 
  
 ##### Sury Repository
 
@@ -70,15 +71,15 @@ By default, the repository from [Ondřej Surý][sury_url] is used as it provides
 
 ### 5.6
 
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default). The installs the CLI package and if install_apache is set to true (which it is by default) the apache package is installed as well. Then the additional packages from the attributes are installed one by one. Finally, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally.
+Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default). The installs the CLI package and if install_apache is set to true (which it is by default) the apache package is installed as well. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
 
 ### 7.1
 
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default). The installs the CLI package and if install_apache is set to true (which it is by default) the apache package is installed as well. Then the additional packages from the attributes are installed one by one. Finally, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally.
+Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default). The installs the CLI package and if install_apache is set to true (which it is by default) the apache package is installed as well. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
 
 ### 7.2
 
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default). The installs the CLI package and if install_apache is set to true (which it is by default) the apache package is installed as well. Then the additional packages from the attributes are installed one by one. Finally, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally.
+Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default). The installs the CLI package and if install_apache is set to true (which it is by default) the apache package is installed as well. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
 
 ### add_sury_repositroy
 
@@ -91,6 +92,9 @@ Downloads the composer.phar directly from composer and places it in /usr/bin/com
 ### Default
 The default cookbook is a No-Op since you want to choose your PHP version and stick to it. Having the default cookbook to install some "random" version could lead
 to unexpected updates and would cause more breaking changes.
+
+### XDebug
+Installs xdebug from package.
 
 [apache2_github]: https://github.com/sous-chefs/apache2
 [apt_github]: https://github.com/chef-cookbooks/apt

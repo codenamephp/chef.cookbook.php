@@ -17,6 +17,7 @@ suites:
       - recipe[codenamephp_php::add_sury_repository]
       - recipe[codenamephp_php::7.2] # a php version needs to be installed for composer to be installed
       - recipe[codenamephp_php::composer]
+      - recipe[codenamephp_php::xdebug]
     verifier:
       inspec_tests:
         - test/smoke/default

@@ -83,6 +83,10 @@ describe 'codenamephp_php::5.6' do
     it 'includes composer recipe' do
       expect(chef_run).to include_recipe('codenamephp_php::composer')
     end
+
+    it 'includes xdebug recipe' do
+      expect(chef_run).to include_recipe('codenamephp_php::xdebug')
+    end
   end
 
   context 'When install apache was set to false' do

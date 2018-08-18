@@ -25,3 +25,4 @@ node['codenamephp_php']['5.6']['additional_packages'].each do |additional_packag
 end
 
 include_recipe '::composer' if node['codenamephp_php']['install_composer']
+include_recipe '::xdebug' if node['codenamephp_php']['install_xdebug']
