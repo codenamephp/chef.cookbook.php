@@ -4,13 +4,6 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-include_recipe 'apt'
-
-apt_repository 'sury-php' do
-  uri 'https://packages.sury.org/php/'
-  repo_name 'sury-php'
-  distribution 'stretch'
-  components ['main']
-  key 'https://packages.sury.org/php/apt.gpg'
+codenamephp_php_sury_repository 'sury-php' do
   only_if { node['codenamephp_php']['add_sury_repository'] }
 end

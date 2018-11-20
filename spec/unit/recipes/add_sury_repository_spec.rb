@@ -17,18 +17,8 @@ describe 'codenamephp_php::add_sury_repository' do
       expect { chef_run }.to_not raise_error
     end
 
-    it 'includes apt cookbook' do
-      expect(chef_run).to include_recipe('apt')
-    end
-
-    it 'adds the sury apt repository' do
-      expect(chef_run).to add_apt_repository('sury-php').with(
-        uri: 'https://packages.sury.org/php/',
-        repo_name: 'sury-php',
-        distribution: 'stretch',
-        components: ['main'],
-        key: ['https://packages.sury.org/php/apt.gpg']
-      )
+    it 'installs sury repository using resource' do
+      expect(chef_run).to add_codenamephp_php_sury_repository('sury-php')
     end
   end
 
@@ -43,8 +33,8 @@ describe 'codenamephp_php::add_sury_repository' do
       expect { chef_run }.to_not raise_error
     end
 
-    it 'adds the sury apt repository' do
-      expect(chef_run).to_not add_apt_repository('sury-php')
+    it 'will not install sury repository using resource due to only_if guard' do
+      expect(chef_run).to_not add_codenamephp_php_sury_repository('sury-php')
     end
   end
 end

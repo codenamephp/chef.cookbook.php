@@ -10,4 +10,8 @@ control 'xdebug-1.0' do
   describe package('php-xdebug') do
     it { should be_installed }
   end
+
+  describe bash('php -i | grep 30-xdebug-custom.ini') do
+    its('exit_status') { should eq 0 }
+  end
 end
