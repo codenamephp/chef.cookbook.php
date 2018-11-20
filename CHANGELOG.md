@@ -14,6 +14,10 @@
 
 - Duplicate property [\#12](https://github.com/codenamephp/chef.cookbook.php/issues/12)
 
+**Merged pull requests:**
+
+- \[RELEASE 3.0.0\] [\#15](https://github.com/codenamephp/chef.cookbook.php/pull/15) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v2.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v2.0.0) (2018-08-18)
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.1.0...v2.0.0)
 
