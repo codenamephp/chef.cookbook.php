@@ -4,25 +4,20 @@
 #
 # Copyright:: 2017, The Authors, All Rights Reserved.
 
-include_recipe '::add_sury_repository'
-
-package 'install php7.2 from package' do
-  package_name node['codenamephp_php']['7.2']['package_name']['cli']
+codenamephp_php_sury_repository 'sury-php' do
+  only_if { node['codenamephp_php']['add_sury_repository'] }
 end
 
-if node['codenamephp_php']['install_apache'] == true
-  include_recipe 'codenamephp_apache2'
-
-  package 'install apache php modules' do
-    package_name node['codenamephp_php']['7.2']['package_name']['apache']
-  end
+codenamephp_php_package 'install php 7.2' do
+  package_name node['codenamephp_php']['7.2']['package_name']
+  additional_packages node['codenamephp_php']['7.2']['additional_packages']
 end
 
-node['codenamephp_php']['7.2']['additional_packages'].each do |additional_package|
-  package "install additional package #{additional_package}" do
-    package_name additional_package
-  end
+codenamephp_php_composer 'install composer' do
+  only_if { node['codenamephp_php']['install_composer'] }
 end
 
-include_recipe '::composer' if node['codenamephp_php']['install_composer']
-include_recipe '::xdebug' if node['codenamephp_php']['install_xdebug']
+codenamephp_php_xdebug 'install xdebug' do
+  php_versions %w[7.2]
+  only_if { node['codenamephp_php']['install_xdebug'] }
+end

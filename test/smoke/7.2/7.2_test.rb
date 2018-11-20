@@ -7,11 +7,7 @@ control 'php-7.2-1.0' do
   title 'Make sure php7.2 is intsalled'
   desc 'Install php7.2 and apache2'
 
-  describe package('php7.2') do
-    it { should be_installed }
-  end
-
-  describe package('apache2') do
+  describe package('php7.2-cli') do
     it { should be_installed }
   end
 end

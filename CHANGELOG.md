@@ -1,11 +1,46 @@
 # Change Log
 
-## [1.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/1.1.0) (2018-02-11)
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.0.0...1.1.0)
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v2.0.0...HEAD)
+
+**Implemented enhancements:**
+
+- Remove apache [\#14](https://github.com/codenamephp/chef.cookbook.php/issues/14)
+- Rework to custom resources [\#13](https://github.com/codenamephp/chef.cookbook.php/issues/13)
+- Add xdebug config [\#11](https://github.com/codenamephp/chef.cookbook.php/issues/11)
+
+**Fixed bugs:**
+
+- Duplicate property [\#12](https://github.com/codenamephp/chef.cookbook.php/issues/12)
+
+## [v2.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v2.0.0) (2018-08-18)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.1.0...v2.0.0)
+
+**Implemented enhancements:**
+
+- Make default recipe a no-op [\#9](https://github.com/codenamephp/chef.cookbook.php/issues/9)
+- Add xdebug [\#7](https://github.com/codenamephp/chef.cookbook.php/issues/7)
+- Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
+
+**Closed issues:**
+
+- Add useful default extensions [\#8](https://github.com/codenamephp/chef.cookbook.php/issues/8)
+
+**Merged pull requests:**
+
+- RELEASE 2.0.0 [\#10](https://github.com/codenamephp/chef.cookbook.php/pull/10) ([bastianschwarz](https://github.com/bastianschwarz))
+
+## [v1.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/v1.1.0) (2018-02-11)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.0.0...v1.1.0)
 
 **Implemented enhancements:**
 
 - Change apache dependency [\#4](https://github.com/codenamephp/chef.cookbook.php/issues/4)
+
+**Merged pull requests:**
+
+- Release 1.1.0 [\#5](https://github.com/codenamephp/chef.cookbook.php/pull/5) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v1.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v1.0.0) (2018-02-10)
 **Implemented enhancements:**
