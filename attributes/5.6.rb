@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 default['codenamephp_php']['5.6']['package_name'] = 'php5.6-cli'
 default['codenamephp_php']['5.6']['additional_packages'] = [
   'php5.6-bcmath',

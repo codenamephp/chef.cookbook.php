@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 property :php_versions, Array, required: true, description: 'The php versions the xdebug config will be handled for'
 property :package_name, String, default: 'php-xdebug', description: 'The package name that is used to install xdebug'
 property :config_name, String, default: 'xdebug-custom.ini', description: 'The config name the config file will get'

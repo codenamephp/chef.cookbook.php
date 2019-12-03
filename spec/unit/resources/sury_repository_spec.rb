@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook:: codenamephp_php
 # Spec:: sury_repository
@@ -18,7 +20,6 @@ describe 'codenamephp_php_sury_repository' do
       is_expected.to add_apt_repository('sury_php').with(
         uri: 'https://packages.sury.org/php/',
         repo_name: 'sury_php',
-        distribution: 'stretch',
         components: %w[main],
         key: ['https://packages.sury.org/php/apt.gpg']
       )

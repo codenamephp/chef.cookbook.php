@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 property :cookbook_file, String, required: true, description: 'The cookbook file that will be used as configuration'
 property :php_versions, Array, required: true, description: 'The php versions the config will be handled for'
 property :config_name, String, required: true, description: 'The name the configuration will get in the conf-available and conf.d folders'
