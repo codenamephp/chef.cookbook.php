@@ -113,7 +113,7 @@ namespace :documentation do
       sh "git clone 'https://#{ENV['GH_TOKEN']}@github.com/#{ENV['TRAVIS_REPO_SLUG']}.git' --branch #{origin_branch} --single-branch #{branch_repo}"
     end
     Dir.chdir(branch_repo) do
-      sh format("github_changelog_generator -t #{ENV['GH_TOKEN']} %<version>s", version: ("--future-release #{version_match[1]}" unless version_match.nil?))
+      sh format("github_changelog_generator #{ENV['TRAVIS_REPO_SLUG']} -t #{ENV['GH_TOKEN']} %<version>s", version: ("--future-release #{version_match[1]}" unless version_match.nil?))
       sh 'git diff --exit-code CHANGELOG.md' do |ok|
         sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + origin_branch unless ok
       end
@@ -123,7 +123,7 @@ namespace :documentation do
   desc 'Generate changelog from current commit message for release'
   task changelog_release: ['git:setup'] do
     unless version_match.nil?
-      sh "github_changelog_generator -t #{ENV['GH_TOKEN']} %s--future-release #{version_match[1]}"
+      sh "github_changelog_generator #{ENV['TRAVIS_REPO_SLUG']} -t #{ENV['GH_TOKEN']} %s--future-release #{version_match[1]}"
       sh 'git diff --exit-code CHANGELOG.md' do |ok|
         sh 'git add CHANGELOG.md && git commit --allow-empty -m"[skip ci] Updated changelog" && git push origin ' + ENV['TRAVIS_BRANCH'] unless ok
       end
