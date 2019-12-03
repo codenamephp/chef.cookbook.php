@@ -9,7 +9,8 @@ transport:
 provisioner:
   name: dokken
   deprecations_as_errors: true
- 
+  chef_license: accept
+  
 platforms:
   - name: debian-9
     driver:
