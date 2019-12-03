@@ -35,7 +35,7 @@ deploy:
     on:
       branch: master
     skip_cleanup: true
-    script: chef exec rake release
+    script: chef exec rake release --chef-license=accept
 
 after_script:
   - test $TRAVIS_PULL_REQUEST = false && chef exec rake documentation
