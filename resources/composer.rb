@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 property :binary_path, String, default: '/usr/bin/composer', description: 'Path to where the composer binary will be saved'
 property :source, String, default: 'https://getcomposer.org/composer.phar', description: 'URL from where the composer binary (phar) will be downloaded'
 

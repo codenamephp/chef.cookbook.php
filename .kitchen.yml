@@ -4,18 +4,20 @@ driver:
 
 provisioner:
   name: chef_solo
-
+  chef_license: accept
+  
 verifier:
   name: inspec
 
 platforms:
   - name: debian-9.3
+  - name: debian-10
 
 suites:
   - name: default
     run_list:
       - recipe[codenamephp_php::add_sury_repository]
-      - recipe[codenamephp_php::7.2] # a php version needs to be installed for composer to be installed
+      - recipe[codenamephp_php::7.3] # a php version needs to be installed for composer to be installed
     verifier:
       inspec_tests:
         - test/smoke/default
@@ -40,4 +42,11 @@ suites:
     verifier:
       inspec_tests:
         - test/smoke/7.2
+    attributes:
+  - name: "7.3"
+    run_list:
+      - recipe[codenamephp_php::7.3]
+    verifier:
+      inspec_tests:
+        - test/smoke/7.3
     attributes:

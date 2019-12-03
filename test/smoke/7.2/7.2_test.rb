@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Inspec test for recipe codenamephp_php::7_2
 
 # The Inspec reference, with examples and extensive documentation, can be

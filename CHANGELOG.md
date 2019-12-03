@@ -1,7 +1,7 @@
 # Change Log
 
-## [3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.0.0) (2018-11-20)
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v2.0.0...3.0.0)
+## [v3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.0.0) (2018-11-20)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v2.0.0...v3.0.0)
 
 **Implemented enhancements:**
 

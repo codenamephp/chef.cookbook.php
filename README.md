@@ -14,6 +14,7 @@ Cookbook to install php and apache2
 - 5.6
 - 7.1
 - 7.2
+- 7.3
 
 ### Chef
 
@@ -157,7 +158,6 @@ This resource is used to install the repository from [Ondřej Surý][sury_url] t
 #### Properties
 - `uri`: The uri of the repository, default: `https://packages.sury.org/php/`
 - `repo_name`: The name the repository will get, default: `sury_php`
-- `distribution`: The distribution the repo is for, default: `stretch`
 - `components`: The components that will be used, default: `main`
 - `key`: The source of the key the repo is signed with, default: `https://packages.sury.org/php/apt.gpg`
 
@@ -202,6 +202,10 @@ Includes the add_sury_repository add the APT repo if the attribute is set to tru
 Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
 
 ### 7.2
+
+Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
+
+### 7.3
 
 Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
 

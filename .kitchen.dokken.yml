@@ -9,9 +9,15 @@ transport:
 provisioner:
   name: dokken
   deprecations_as_errors: true
- 
+  chef_license: accept
+  
 platforms:
   - name: debian-9
     driver:
       image: dokken/debian-9
+      pid_one_command: /bin/systemd
+platforms:
+  - name: debian-10
+    driver:
+      image: dokken/debian-10
       pid_one_command: /bin/systemd

@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 #
 # Cookbook:: codenamephp_php
 # Recipe:: add_sury_repository

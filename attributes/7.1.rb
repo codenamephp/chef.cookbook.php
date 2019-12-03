@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 default['codenamephp_php']['7.1']['package_name'] = 'php7.1-cli'
 default['codenamephp_php']['7.1']['additional_packages'] = [
   'php7.1-bcmath',

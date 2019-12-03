@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 property :package_name, String, default: 'php', description: 'The package that is used to install php'
 property :additional_packages, Array, default: [], description: 'Array of package names that will be installed in addition to the base package'
 
