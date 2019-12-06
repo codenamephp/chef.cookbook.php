@@ -50,3 +50,10 @@ suites:
       inspec_tests:
         - test/smoke/7.3
     attributes:
+  - name: "7.4"
+    run_list:
+      - recipe[codenamephp_php::7.4]
+    verifier:
+      inspec_tests:
+        - test/smoke/7.4
+    attributes:
