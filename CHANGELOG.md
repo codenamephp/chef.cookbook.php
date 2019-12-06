@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+## [3.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.2.0) (2019-12-06)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...3.2.0)
 
 **Implemented enhancements:**
 
