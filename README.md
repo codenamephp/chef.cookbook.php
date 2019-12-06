@@ -7,7 +7,7 @@ Cookbook to install php and apache2
 
 ### Supported Platforms
 
-- Debian Stretch
+- Debian Buster (probably works for previous versions too)
 
 ### Supported PHP versions
 
@@ -15,6 +15,7 @@ Cookbook to install php and apache2
 - 7.1
 - 7.2
 - 7.3
+- 7.4
 
 ### Chef
 
@@ -193,19 +194,7 @@ end
 ## Recipes
 These recipies are included to install useful default php versions. Use the resources if you need more flexibility.
 
-### 5.6
-
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
-
-### 7.1
-
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
-
-### 7.2
-
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
-
-### 7.3
+### 5.6 - 7.4
 
 Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
 
