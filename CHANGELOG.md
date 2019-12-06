@@ -9,6 +9,10 @@
 - Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
 
+**Merged pull requests:**
+
+- \[RELEASE 3.1.0\] [\#17](https://github.com/codenamephp/chef.cookbook.php/pull/17) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.0.0) (2018-11-20)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v2.0.0...v3.0.0)
