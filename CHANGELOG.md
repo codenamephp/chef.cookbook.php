@@ -1,13 +1,14 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+## [v3.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.2.0) (2019-12-06)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...v3.2.0)
 
 **Implemented enhancements:**
 
 - Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
+- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 
