@@ -7,15 +7,7 @@ Cookbook to install php and apache2
 
 ### Supported Platforms
 
-- Debian Buster (probably works for previous versions too)
-
-### Supported PHP versions
-
-- 5.6
-- 7.1
-- 7.2
-- 7.3
-- 7.4
+- Debian Buster (probably works for previous versions and ubuntu too)
 
 ### Chef
 
@@ -25,48 +17,37 @@ Cookbook to install php and apache2
 
 - [apt][apt_github]
 
+## Deprecation
+
+The recicpies are now depcracted and will be removed with the next major release. Just create a wrapper cookbook and use the resources as needed. This is more stable while reducing the amount of "guesswork" that is needed in the first place when creating the recipies.
+
+This also means that the attributes will be removed as well since they are only used in the recipies.
+
 ## Usage
 
-Add the cookbook to your Berksfile:
+Create a wrapper cookbook and add this cookbook to your Berksfile/Metadata.
 
+In your recipie you can use the existing resources, e.g.
+
+```ruby
+codenamephp_php_sury_repository 'sury-php'
+
+codenamephp_php_package 'install php 5.6' do
+  package_name "php5.6-cli"
+end
+
+codenamephp_php_package 'install php 7.4' do
+  package_name "php7.4-cli"
+  additional_packages %w[php7.4-fpm php7.4-curl php7.4-gd]
+end
+
+codenamephp_php_composer 'install composer'
+
+codenamephp_php_xdebug 'install xdebug' do
+  php_versions %w[5.6 7.4]
+  services %w[cli fpm]
+end
 ```
-cookbook 'codename_php'
-```
-
-Don't forget to add the version constraint for the latest version, e.g. "~> 2.0"
-
-Add the cookbook to your runlist. Since the default recipe is a No-Op, you need to add the version you want as recipe.
-
-This example will install php5.6 and php7.1 where php7.1 will be used for apache since it is the last package to install the apache package.
-
-```json
-{
-  "name": "default",
-  "chef_type": "role",
-  "json_class": "Chef::Role",
-  "run_list": [
-    "recipe[codename_php::5.6]"
-	  "recipe[codename_php::7.1]"
-  ]
-}
-```
- For more flexiblity, check the resources.
- 
-### Attributes
-
-#### Overwrites
-
-##### Common
- 
-- `default['codename_php']['install_composer'] = true` Set to false if you don't want composer installed 
-- `default['codename_php']['install_xdebug'] = true` Set to false if you don't want xdebug installed 
- 
-##### Sury Repository
-
-By default, the repository from [Ondřej Surý][sury_url] is used as it provides the most recent and some older versions.
-
-- `default['codename_php']['add_sury_repository'] = true` Set to false if you want to use the OS default channels. 
-  Be aware that not all PHP versions might be available.
 
 ## Resources
 
@@ -106,7 +87,7 @@ This config can be used to create and manage configurations.
 - `php_versions`: The php versions the config will be managed for as string array
 - `config_name`: The name the config will get in the mods-available folder
 - `priority`: The prefix the symlink will get to determine the sequence the config is loaded in, default: `30` (after default configs which have 20)
-- `services`: The services the config should be managed for, default: `['cli', 'apache2']`
+- `services`: The services the config should be managed for, default: `['cli', 'apache2', 'fpm']`
 - `cookbook_file_cookbook`: The cookbook the cookfile_file will be taken from, default: `codenamephp_php`
 
 #### Examples
@@ -182,6 +163,7 @@ This resource can be used to install xdebug with a default configuraiton.
 - `config_cookbook_file`: The cookbook file that will be used as config, default: `xdebug.ini`
 - `config_cookbook_file_cookbook`: The cookbook the cookbook file will be taken from, default: `codenamephp_php`
 - `add_sury_repository`: If the sury repository should be added, default: `true`
+- `services`: The services the config should be managed for, default: `['cli', 'apache2', 'fpm']`
 
 #### Examples
 ```ruby
@@ -191,18 +173,7 @@ codenamephp_php_xdebug 'install xdebug' do
 end
 ```
 
-## Recipes
-These recipies are included to install useful default php versions. Use the resources if you need more flexibility.
-
-### 5.6 - 7.4
-
-Includes the add_sury_repository add the APT repo if the attribute is set to true (which it is by default) and installs php cli from package. Then the additional packages from the attributes are installed one by one. Then, composer.phar is downloaded and placed in the path if the install attribute is set to true so composer is available globally. Finally, xdebug will be installed from package if the attribute is still set to true.
-
-### add_sury_repositroy
-
-Adds the repository from [Ondřej Surý][sury_url] to apt.
-
-### Default
+## Default
 The default cookbook is a No-Op since you want to choose your PHP version and stick to it. Having the default cookbook to install some "random" version could lead
 to unexpected updates and would cause more breaking changes.
 
