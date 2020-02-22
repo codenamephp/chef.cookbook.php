@@ -55,13 +55,13 @@ describe 'codenamephp_php_xdebug' do
       codenamephp_php_xdebug 'install xdebug' do
         php_versions %w[99 88]
         action :install
-        services %w[test1, test2]
+        services %w[test1 test2]
       end
     end
 
     it {
       is_expected.to enable_codenamephp_php_config('xdebug').with(
-        services: %w[test1, test2]
+        services: %w[test1 test2]
       )
     }
   end
@@ -71,13 +71,13 @@ describe 'codenamephp_php_xdebug' do
       codenamephp_php_xdebug 'install xdebug' do
         php_versions %w[99 88]
         action :remove
-        services %w[test1, test2]
+        services %w[test1 test2]
       end
     end
 
     it {
       is_expected.to delete_codenamephp_php_config('xdebug').with(
-        services: %w[test1, test2]
+        services: %w[test1 test2]
       )
     }
   end
