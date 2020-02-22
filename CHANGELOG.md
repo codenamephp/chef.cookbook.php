@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...HEAD)
+
+**Closed issues:**
+
+- Add services to xdebug resource [\#24](https://github.com/codenamephp/chef.cookbook.php/issues/24)
+- Deprecate recipes [\#23](https://github.com/codenamephp/chef.cookbook.php/issues/23)
+
 ## [v3.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.2.0) (2019-12-06)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...v3.2.0)
