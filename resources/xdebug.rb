@@ -6,6 +6,7 @@ property :config_name, String, default: 'xdebug-custom.ini', description: 'The c
 property :config_cookbook_file, default: 'xdebug.ini', description: 'The name of the cookbook file of the config'
 property :config_cookbook_file_cookbook, default: 'codenamephp_php', description: 'The name of the cookbook the cookbook file will be taken from'
 property :add_sury_repository, default: true, description: 'Flag if the sury repository should be added first'
+property :services, Array, default: %w[cli apache2 fpm], description: 'The services like cli and apache2 the config will be handled for'
 
 action :install do
   codenamephp_php_sury_repository 'sury-php' do
@@ -21,6 +22,7 @@ action :install do
     cookbook_file_cookbook new_resource.config_cookbook_file_cookbook
     config_name new_resource.config_name
     php_versions new_resource.php_versions
+    services new_resource.services
   end
 end
 
@@ -38,6 +40,7 @@ action :remove do
     cookbook_file new_resource.config_cookbook_file
     config_name new_resource.config_name
     php_versions new_resource.php_versions
+    services new_resource.services
     action :delete
   end
 end

@@ -2,12 +2,26 @@
 
 ## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...HEAD)
+
+**Implemented enhancements:**
+
+- Support Phive [\#22](https://github.com/codenamephp/chef.cookbook.php/issues/22)
+
+**Closed issues:**
+
+- Add services to xdebug resource [\#24](https://github.com/codenamephp/chef.cookbook.php/issues/24)
+- Deprecate recipes [\#23](https://github.com/codenamephp/chef.cookbook.php/issues/23)
+
+## [v3.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.2.0) (2019-12-06)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...v3.2.0)
 
 **Implemented enhancements:**
 
 - Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
+- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 

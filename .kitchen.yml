@@ -10,50 +10,12 @@ verifier:
   name: inspec
 
 platforms:
-  - name: debian-9.3
   - name: debian-10
 
 suites:
   - name: default
     run_list:
-      - recipe[codenamephp_php::add_sury_repository]
-      - recipe[codenamephp_php::7.3] # a php version needs to be installed for composer to be installed
+      - recipe[test::default]
     verifier:
       inspec_tests:
         - test/smoke/default
-    attributes:
-  - name: "5.6"
-    run_list:
-      - recipe[codenamephp_php::5.6]
-    verifier:
-      inspec_tests:
-        - test/smoke/5.6
-    attributes:
-  - name: "7.1"
-    run_list:
-      - recipe[codenamephp_php::7.1]
-    verifier:
-      inspec_tests:
-        - test/smoke/7.1
-    attributes:
-  - name: "7.2"
-    run_list:
-      - recipe[codenamephp_php::7.2]
-    verifier:
-      inspec_tests:
-        - test/smoke/7.2
-    attributes:
-  - name: "7.3"
-    run_list:
-      - recipe[codenamephp_php::7.3]
-    verifier:
-      inspec_tests:
-        - test/smoke/7.3
-    attributes:
-  - name: "7.4"
-    run_list:
-      - recipe[codenamephp_php::7.4]
-    verifier:
-      inspec_tests:
-        - test/smoke/7.4
-    attributes:
