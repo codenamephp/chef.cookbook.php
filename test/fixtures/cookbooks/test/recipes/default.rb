@@ -17,3 +17,5 @@ codenamephp_php_xdebug 'install xdebug' do
   php_versions %w[5.6 7.4]
   services %w[cli fpm]
 end
+
+codenamephp_php_phive 'install phive'

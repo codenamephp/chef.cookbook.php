@@ -23,3 +23,6 @@ Metrics/ModuleLength:
 
 Metrics/MethodLength:
   Max: 15
+
+Lint/AmbiguousBlockAssociation:
+  Enabled: false

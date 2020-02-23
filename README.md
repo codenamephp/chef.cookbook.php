@@ -173,6 +173,21 @@ codenamephp_php_xdebug 'install xdebug' do
 end
 ```
 
+### Phive
+This resources installs [Phive][phive_url] as global command line tool
+
+#### Actions
+- `install`: Downloads, verifies and installs the phar
+- `uninstall`: Removes the phar
+
+#### Properties
+- `binary_path`: The final path where the binary will be put. Should be in the system path, default: `'/usr/bin/phive'`
+- `binary_temp_path`: The path where the phar will be downloaded to prior to verification, default: `'/tmp/phive.phar'`
+- `source`: The source from where the phar will be downloaded, default: `'https://phar.io/releases/phive.phar'`
+- `key_uri`: The uri from where the key for verification will be downloaded, default: `'https://phar.io/releases/phive.phar.asc'`
+- `key_path`: The path to where the key will be downloaded to prior to verifcation, default: `'/tmp/phive.phar.asc'`
+- `install_php_dependencies`: Flag if the dependencies (php and some extensions) should be installed, default: true
+Keep in mind that if you set these to false, you need to install the dependencies yourself or Phive might not work
 ## Default
 The default cookbook is a No-Op since you want to choose your PHP version and stick to it. Having the default cookbook to install some "random" version could lead
 to unexpected updates and would cause more breaking changes.
@@ -181,3 +196,4 @@ to unexpected updates and would cause more breaking changes.
 [apt_github]: https://github.com/chef-cookbooks/apt
 [chef.cookbook.apache2_github]: https://github.com/codenamephp/chef.cookbook.apache2
 [sury_url]: https://deb.sury.org/
+[phive_url]: https://phar.io
