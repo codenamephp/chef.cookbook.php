@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...HEAD)
 
+**Implemented enhancements:**
+
+- Support Phive [\#22](https://github.com/codenamephp/chef.cookbook.php/issues/22)
+
 **Closed issues:**
 
 - Add services to xdebug resource [\#24](https://github.com/codenamephp/chef.cookbook.php/issues/24)
