@@ -1,9 +1,10 @@
 AllCops:
+  NewCops: enable
   Exclude:
     - 'bin/**'
     - 'bundler/**'
 
-Metrics/LineLength:
+Layout/LineLength:
   Max: 160
 
 Metrics/BlockLength:

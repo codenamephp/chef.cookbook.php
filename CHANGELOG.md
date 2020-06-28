@@ -1,8 +1,8 @@
 # Changelog
 
-## [3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.0) (2020-02-23)
+## [v3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.3.0) (2020-02-23)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...3.3.0)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...v3.3.0)
 
 **Implemented enhancements:**
 
@@ -12,6 +12,10 @@
 
 - Add services to xdebug resource [\#24](https://github.com/codenamephp/chef.cookbook.php/issues/24)
 - Deprecate recipes [\#23](https://github.com/codenamephp/chef.cookbook.php/issues/23)
+
+**Merged pull requests:**
+
+- \[RELEASE 3.3.0\] [\#25](https://github.com/codenamephp/chef.cookbook.php/pull/25) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v3.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.2.0) (2019-12-06)
 
