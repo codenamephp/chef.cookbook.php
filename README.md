@@ -1,5 +1,5 @@
 # Chef Cookbook PHP
-[![Build Status](https://travis-ci.org/codenamephp/chef.cookbook.php.svg?branch=dev)](https://travis-ci.org/codenamephp/chef.cookbook.php)
+[![Build Status](https://travis-ci.com/codenamephp/chef.cookbook.php.svg?branch=master)](https://travis-ci.com/codenamephp/chef.cookbook.php)
 
 Cookbook to install php and apache2
 
