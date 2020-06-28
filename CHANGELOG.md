@@ -1,5 +1,13 @@
 # Changelog
 
+## [3.3.1](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.1) (2020-06-28)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.0...3.3.1)
+
+**Merged pull requests:**
+
+- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.3.0) (2020-02-23)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...v3.3.0)
