@@ -30,7 +30,7 @@ jobs:
         run: 'echo "$CHEF_KEY" > codenamephp.pem'
         shell: bash
         env:
-          SSH_KEY: ${{secrets.CHEF_KEY}}
+          CHEF_KEY: ${{secrets.CHEF_KEY}}
       - name: Cookstyle
         run: chef exec cookstyle
       - name: UnitTests
