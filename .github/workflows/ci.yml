@@ -25,7 +25,7 @@ jobs:
       - name: Check out code
         uses: actions/checkout@v2
       - name: install chef
-        uses: actionshub/chef-install@v2
+        uses: actionshub/chef-install@main
       - name: Create key
         run: 'echo "$CHEF_KEY" > codenamephp.pem'
         shell: bash
