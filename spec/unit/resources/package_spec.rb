@@ -31,7 +31,7 @@ describe 'codenamephp_php_package' do
     recipe do
       codenamephp_php_package 'install php' do
         package_name 'some package'
-        additional_packages %w[package1 package2]
+        additional_packages %w(package1 package2)
       end
     end
 
@@ -41,7 +41,7 @@ describe 'codenamephp_php_package' do
       )
 
       is_expected.to install_package('install additional packages package1, package2').with(
-        package_name: %w[package1 package2]
+        package_name: %w(package1 package2)
       )
     }
   end

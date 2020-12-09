@@ -20,6 +20,6 @@ codenamephp_php_composer 'install composer' do
 end
 
 codenamephp_php_xdebug 'install xdebug' do
-  php_versions %w[5.6]
+  php_versions %w(5.6)
   only_if { node['codenamephp_php']['install_xdebug'] }
 end
