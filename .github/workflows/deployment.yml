@@ -30,7 +30,7 @@ jobs:
           CHEF_KEY: ${{secrets.CHEF_KEY}}
 
       - name: Install spork
-        run: gem install knife-spork
+        run: chef exec gem install knife-spork
 
       - name: Get cookbook name
         id: get_cookbook_name
