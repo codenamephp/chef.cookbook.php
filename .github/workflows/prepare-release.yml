@@ -24,9 +24,9 @@ jobs:
       - name: draft release
         uses: release-drafter/release-drafter@v5
         with:
-          version: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
-          tag: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
-          name: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
+          version: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
+          tag: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
+          name: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -43,7 +43,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: "duplicate,question,invalid,wontfix,skip-changelog"
-          future_release: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
+          future_release: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
           release_branch: 'release'
 
       - name: commit updated changelog
