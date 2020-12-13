@@ -12,6 +12,10 @@
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.0...3.3.1)
 
+**Implemented enhancements:**
+
+- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
+
 **Merged pull requests:**
 
 - \[CHANGELOG\] 3.3.1 [\#28](https://github.com/codenamephp/chef.cookbook.php/pull/28) ([github-actions[bot]](https://github.com/apps/github-actions))
@@ -46,7 +50,6 @@
 
 - Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
-- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 
@@ -79,7 +82,6 @@
 - Make default recipe a no-op [\#9](https://github.com/codenamephp/chef.cookbook.php/issues/9)
 - Add xdebug [\#7](https://github.com/codenamephp/chef.cookbook.php/issues/7)
 - Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
-- Add PHP5.6 support [\#1](https://github.com/codenamephp/chef.cookbook.php/issues/1)
 
 **Closed issues:**
 
@@ -104,6 +106,10 @@
 ## [v1.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v1.0.0) (2018-02-10)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/09a54ef2cb5ea139b9c979ba2f417a532bd73820...v1.0.0)
+
+**Implemented enhancements:**
+
+- Add PHP5.6 support [\#1](https://github.com/codenamephp/chef.cookbook.php/issues/1)
 
 **Merged pull requests:**
 
