@@ -7,6 +7,8 @@ jobs:
   deploy:
     name: Deploy to chef server and supermarket
     runs-on: ubuntu-latest
+    env:
+      CHEF_LICENSE: accept-no-persist
     steps:
       - name: start deployment
         uses: bobheadxi/deployments@v0.4.3
