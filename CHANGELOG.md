@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.1](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.1) (2020-06-28)
