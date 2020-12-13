@@ -78,6 +78,7 @@
 
 - Make default recipe a no-op [\#9](https://github.com/codenamephp/chef.cookbook.php/issues/9)
 - Add xdebug [\#7](https://github.com/codenamephp/chef.cookbook.php/issues/7)
+- Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
 
 **Closed issues:**
 
@@ -105,7 +106,6 @@
 
 **Implemented enhancements:**
 
-- Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
 - Add PHP5.6 support [\#1](https://github.com/codenamephp/chef.cookbook.php/issues/1)
 
 **Merged pull requests:**
