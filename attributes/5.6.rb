@@ -14,5 +14,5 @@ default['codenamephp_php']['5.6']['additional_packages'] = [
   'php5.6-xsl',
   'php5.6-xmlrpc',
   'php5.6-zip',
-  'php-imagick'
+  'php-imagick',
 ]

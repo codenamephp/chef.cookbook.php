@@ -3,10 +3,10 @@
 property :php_versions, Array, required: true, description: 'The php versions the xdebug config will be handled for'
 property :package_name, String, default: 'php-xdebug', description: 'The package name that is used to install xdebug'
 property :config_name, String, default: 'xdebug-custom.ini', description: 'The config name the config file will get'
-property :config_cookbook_file, default: 'xdebug.ini', description: 'The name of the cookbook file of the config'
-property :config_cookbook_file_cookbook, default: 'codenamephp_php', description: 'The name of the cookbook the cookbook file will be taken from'
-property :add_sury_repository, default: true, description: 'Flag if the sury repository should be added first'
-property :services, Array, default: %w[cli apache2 fpm], description: 'The services like cli and apache2 the config will be handled for'
+property :config_cookbook_file, String, default: 'xdebug.ini', description: 'The name of the cookbook file of the config'
+property :config_cookbook_file_cookbook, String, default: 'codenamephp_php', description: 'The name of the cookbook the cookbook file will be taken from'
+property :add_sury_repository, [true, false], default: true, description: 'Flag if the sury repository should be added first'
+property :services, Array, default: %w(cli apache2 fpm), description: 'The services like cli and apache2 the config will be handled for'
 
 action :install do
   codenamephp_php_sury_repository 'sury-php' do

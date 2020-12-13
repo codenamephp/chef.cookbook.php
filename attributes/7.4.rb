@@ -13,5 +13,5 @@ default['codenamephp_php']['7.4']['additional_packages'] = [
   'php7.4-xsl',
   'php7.4-xmlrpc',
   'php7.4-zip',
-  'php-imagick'
+  'php-imagick',
 ]

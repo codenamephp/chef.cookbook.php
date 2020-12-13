@@ -14,7 +14,7 @@ describe 'codenamephp_php_xdebug' do
   context 'Install with minimal properties' do
     recipe do
       codenamephp_php_xdebug 'install xdebug' do
-        php_versions %w[99 88]
+        php_versions %w(99 88)
       end
     end
 
@@ -24,8 +24,8 @@ describe 'codenamephp_php_xdebug' do
       is_expected.to enable_codenamephp_php_config('xdebug').with(
         cookbook_file: 'xdebug.ini',
         config_name: 'xdebug-custom.ini',
-        php_versions: %w[99 88],
-        services: %w[cli apache2 fpm]
+        php_versions: %w(99 88),
+        services: %w(cli apache2 fpm)
       )
     }
   end
@@ -33,7 +33,7 @@ describe 'codenamephp_php_xdebug' do
   context 'Remove with minimal properties' do
     recipe do
       codenamephp_php_xdebug 'install xdebug' do
-        php_versions %w[99 88]
+        php_versions %w(99 88)
         action :remove
       end
     end
@@ -44,8 +44,8 @@ describe 'codenamephp_php_xdebug' do
       is_expected.to delete_codenamephp_php_config('xdebug').with(
         cookbook_file: 'xdebug.ini',
         config_name: 'xdebug-custom.ini',
-        php_versions: %w[99 88],
-        services: %w[cli apache2 fpm]
+        php_versions: %w(99 88),
+        services: %w(cli apache2 fpm)
       )
     }
   end
@@ -53,15 +53,15 @@ describe 'codenamephp_php_xdebug' do
   context 'Install with services' do
     recipe do
       codenamephp_php_xdebug 'install xdebug' do
-        php_versions %w[99 88]
+        php_versions %w(99 88)
         action :install
-        services %w[test1 test2]
+        services %w(test1 test2)
       end
     end
 
     it {
       is_expected.to enable_codenamephp_php_config('xdebug').with(
-        services: %w[test1 test2]
+        services: %w(test1 test2)
       )
     }
   end
@@ -69,15 +69,15 @@ describe 'codenamephp_php_xdebug' do
   context 'Remove with services' do
     recipe do
       codenamephp_php_xdebug 'install xdebug' do
-        php_versions %w[99 88]
+        php_versions %w(99 88)
         action :remove
-        services %w[test1 test2]
+        services %w(test1 test2)
       end
     end
 
     it {
       is_expected.to delete_codenamephp_php_config('xdebug').with(
-        services: %w[test1 test2]
+        services: %w(test1 test2)
       )
     }
   end

@@ -4,7 +4,7 @@ property :cookbook_file, String, required: true, description: 'The cookbook file
 property :php_versions, Array, required: true, description: 'The php versions the config will be handled for'
 property :config_name, String, required: true, description: 'The name the configuration will get in the conf-available and conf.d folders'
 property :priority, Integer, default: 30, description: 'The priority prefix the symlink will get which determines the sequence the configs are read in'
-property :services, Array, default: %w[cli apache2 fpm], description: 'The services like cli and apache2 the config will be handled for'
+property :services, Array, default: %w(cli apache2 fpm), description: 'The services like cli and apache2 the config will be handled for'
 property :cookbook_file_cookbook, String, default: 'codenamephp_php', description: 'The cookbook the cookbook file will be taken from'
 
 action :enable do

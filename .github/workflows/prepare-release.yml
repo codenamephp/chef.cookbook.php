@@ -1,0 +1,98 @@
+name: Prepare Release
+on:
+  push:
+    branches: [ release ]
+    paths-ignore:
+      - '**.md'
+
+jobs:
+  calculate_next_version:
+    name: Calculate next release version
+    runs-on: ubuntu-latest
+    steps:
+      - name: calculate next version
+        id: version
+        uses: patrickjahns/version-drafter-action@v1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  draft_release:
+    name: Create draft release
+    runs-on: ubuntu-latest
+    needs: calculate_next_version
+    steps:
+      - name: draft release
+        uses: release-drafter/release-drafter@v5
+        with:
+          version: ${{ format('{0}', jobs.calculate_next_version.steps.version.outputs.next-version) }}
+          tag: ${{ format('{0}', jobs.calculate_next_version.steps.version.outputs.next-version) }}
+          name: ${{ format('{0}', jobs.calculate_next_version.steps.version.outputs.next-version) }}
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  update_changelog:
+    name: Update changelog
+    runs-on: ubuntu-latest
+    needs: calculate_next_version
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: create changelog
+        uses: charmixer/auto-changelog-action@v1.1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          exclude_labels: "duplicate,question,invalid,wontfix,skip-changelog"
+          future_release: ${{ format('{0}', jobs.calculate_next_version.steps.version.outputs.next-version) }}
+          release_branch: 'release'
+
+      - name: commit updated changelog
+        uses: EndBug/add-and-commit@v5
+        with:
+          message: "[CHANGELOG] Updated changelog"
+          add: "CHANGELOG.md"
+          signoff: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+  bump_cookbook_version:
+    name: Bump cookbook version and check upload
+    runs-on: ubuntu-latest
+    needs: calculate_next_version
+    steps:
+      - name: checkout
+        uses: actions/checkout@v2
+
+      - name: install chef
+        uses: actionshub/chef-install@main
+
+      - name: Create key
+        run: 'echo "$CHEF_KEY" > codenamephp.pem'
+        shell: bash
+        env:
+          CHEF_KEY: ${{secrets.CHEF_KEY}}
+
+      - name: Install spork
+        run: gem install knife-spork
+
+      - name: Get cookbook name
+        id: get_cookbook_name
+        run: ::set-output name=cookbook_name::$(chef exec ruby -e 'require "chef/cookbook/metadata"; metadata = Chef::Cookbook::Metadata.new; metadata.from_file("metadata.rb"); puts metadata.name')
+
+      - name: Bump cookbook version in metadata
+        run: knife spork bump ${{ steps.get_cookbook_name.outputs.cookbook_name }} manual ${{ format('{0}', jobs.calculate_next_version.steps.version.outputs.next-version) }} -o ..
+
+      - name: Check cookbook version in metadata
+        run: knife spork check ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --fail
+
+      - name: Dry run deploy to supermarket
+        run: knife supermarket share ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --dry-run
+
+      - name: commit numped metadata
+        uses: EndBug/add-and-commit@v5
+        with:
+          message: "[METADATA] Updated version"
+          add: "metadata.rb"
+          signoff: true
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

@@ -8,14 +8,14 @@ end
 
 codenamephp_php_package 'install php 7.4' do
   package_name 'php7.4-cli'
-  additional_packages %w[php7.4-fpm php7.4-curl php7.4-gd]
+  additional_packages %w(php7.4-fpm php7.4-curl php7.4-gd)
 end
 
 codenamephp_php_composer 'install composer'
 
 codenamephp_php_xdebug 'install xdebug' do
-  php_versions %w[5.6 7.4]
-  services %w[cli fpm]
+  php_versions %w(5.6 7.4)
+  services %w(cli fpm)
 end
 
 codenamephp_php_phive 'install phive'

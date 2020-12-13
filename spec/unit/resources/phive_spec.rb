@@ -28,17 +28,17 @@ describe 'codenamephp_php_phive' do
 
     it {
       is_expected.to install_codenamephp_php_package('install needed extensions').with(
-        additional_packages: %w[php-xml php-mbstring]
+        additional_packages: %w(php-xml php-mbstring)
       )
 
       is_expected.to create_remote_file('/tmp/phive.phar').with(
         source: 'https://phar.io/releases/phive.phar',
-        mode: '0775'
+        mode: '775'
       )
 
       is_expected.to create_remote_file('/tmp/phive.phar.asc').with(
         source: 'https://phar.io/releases/phive.phar.asc',
-        mode: '0775'
+        mode: '775'
       )
 
       expect(chef_run.remote_file('/tmp/phive.phar.asc')).to notify('execute[verify downloaded phar]').to(:run).immediately
@@ -53,7 +53,7 @@ describe 'codenamephp_php_phive' do
         path: '/usr/bin/phive',
         owner: 'root',
         group: 'root',
-        mode: 0o755
+        mode: '755'
       )
 
       is_expected.to delete_file('delete tmp binary').with(
@@ -126,7 +126,7 @@ describe 'codenamephp_php_phive' do
 
     it {
       is_expected.to_not install_codenamephp_php_package('install needed extensions').with(
-        additional_packages: %w[php-xml php-mbstring]
+        additional_packages: %w(php-xml php-mbstring)
       )
     }
   end

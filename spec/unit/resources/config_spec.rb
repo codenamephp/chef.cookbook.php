@@ -19,7 +19,7 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99]
+        php_versions %w(99.99)
         config_name 'my great config'
       end
     end
@@ -35,7 +35,7 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99 88.88 77.77]
+        php_versions %w(99.99 88.88 77.77)
         config_name 'my great config'
       end
     end
@@ -60,10 +60,10 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99]
+        php_versions %w(99.99)
         config_name 'my great config'
         priority 99
-        services %w[service1 service2]
+        services %w(service1 service2)
       end
     end
 
@@ -78,10 +78,10 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99]
+        php_versions %w(99.99)
         config_name 'my great config'
         priority 99
-        services %w[service1 service2]
+        services %w(service1 service2)
         action :create
       end
     end
@@ -97,10 +97,10 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99]
+        php_versions %w(99.99)
         config_name 'my great config'
         priority 99
-        services %w[service1 service2]
+        services %w(service1 service2)
         action :disable
       end
     end
@@ -116,10 +116,10 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99]
+        php_versions %w(99.99)
         config_name 'my great config'
         priority 99
-        services %w[service1 service2]
+        services %w(service1 service2)
         action :delete
       end
     end
@@ -135,10 +135,10 @@ describe 'codenamephp_php_config' do
     recipe do
       codenamephp_php_config 'my config' do
         cookbook_file 'some/file'
-        php_versions %w[99.99]
+        php_versions %w(99.99)
         config_name 'my great config'
         priority 99
-        services %w[service1 service2]
+        services %w(service1 service2)
       end
     end
 

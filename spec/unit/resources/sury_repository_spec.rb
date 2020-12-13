@@ -20,7 +20,7 @@ describe 'codenamephp_php_sury_repository' do
       is_expected.to add_apt_repository('sury_php').with(
         uri: 'https://packages.sury.org/php/',
         repo_name: 'sury_php',
-        components: %w[main],
+        components: %w(main),
         key: ['https://packages.sury.org/php/apt.gpg']
       )
     }

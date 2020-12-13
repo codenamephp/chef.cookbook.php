@@ -32,7 +32,7 @@ describe 'codenamephp_php::7.3' do
     end
 
     it 'installs xdebug' do
-      expect(chef_run).to install_codenamephp_php_xdebug('install xdebug').with(php_versions: %w[7.3])
+      expect(chef_run).to install_codenamephp_php_xdebug('install xdebug').with(php_versions: %w(7.3))
     end
   end
 
@@ -40,7 +40,7 @@ describe 'codenamephp_php::7.3' do
     let(:chef_run) do
       ChefSpec::SoloRunner.new do |node|
         node.normal['codenamephp_php']['7.3']['package_name'] = 'some package'
-        node.normal['codenamephp_php']['7.3']['additional_packages'] = %w[package1 package2 package3]
+        node.normal['codenamephp_php']['7.3']['additional_packages'] = %w(package1 package2 package3)
       end.converge(described_recipe)
     end
 
@@ -51,7 +51,7 @@ describe 'codenamephp_php::7.3' do
     it 'installs php7.1 and additional package using custom values' do
       expect(chef_run).to install_codenamephp_php_package('install php 7.3').with(
         package_name: 'some package',
-        additional_packages: %w[package1 package2 package3]
+        additional_packages: %w(package1 package2 package3)
       )
     end
   end
