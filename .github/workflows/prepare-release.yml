@@ -24,9 +24,9 @@ jobs:
       - name: draft release
         uses: release-drafter/release-drafter@v5
         with:
-          version: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
-          tag: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
-          name: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
+          version: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
+          tag: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
+          name: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -43,7 +43,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: "duplicate,question,invalid,wontfix,skip-changelog"
-          future_release: ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }}
+          future_release: ${{ format('{0}', needs.version.steps.version.outputs.next-version) }}
           release_branch: 'release'
 
       - name: commit updated changelog
@@ -82,7 +82,7 @@ jobs:
         run: ::set-output name=cookbook_name::$(chef exec ruby -e 'require "chef/cookbook/metadata"; metadata = Chef::Cookbook::Metadata.new; metadata.from_file("metadata.rb"); puts metadata.name')
 
       - name: Bump cookbook version in metadata
-        run: knife spork bump ${{ steps.get_cookbook_name.outputs.cookbook_name }} manual ${{ format('{0}', needs.calculate_next_version.steps.version.outputs.next-version) }} -o ..
+        run: knife spork bump ${{ steps.get_cookbook_name.outputs.cookbook_name }} manual ${{ format('{0}', needs.version.steps.version.outputs.next-version) }} -o ..
 
       - name: Check cookbook version in metadata
         run: knife spork check ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --fail
