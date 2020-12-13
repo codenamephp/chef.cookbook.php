@@ -94,7 +94,7 @@ jobs:
       - name: Dry run deploy to supermarket
         run: knife supermarket share ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --dry-run
 
-      - name: commit numped metadata
+      - name: commit bumped metadata
         uses: EndBug/add-and-commit@v5
         with:
           message: "[METADATA] Updated version"
