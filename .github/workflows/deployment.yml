@@ -34,8 +34,10 @@ jobs:
 
       - name: Get cookbook name
         id: get_cookbook_name
-        run: ::set-output name=cookbook_name::$(chef exec ruby -e 'require "chef/cookbook/metadata"; metadata = Chef::Cookbook::Metadata.new; metadata.from_file("metadata.rb"); puts metadata.name')
-
+        run: |
+          export COOKBOOK_NAME=`chef exec ruby -e 'require "chef/cookbook/metadata"; metadata = Chef::Cookbook::Metadata.new; metadata.from_file("metadata.rb"); puts metadata.name'`
+          echo "::set-output name=cookbook_name::$COOKBOOK_NAME"
+          
       - name: Check cookbook version in metadata
         run: knife spork check ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --fail
 
