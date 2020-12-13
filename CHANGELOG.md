@@ -1,12 +1,25 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.1...HEAD)
+
+**Merged pull requests:**
+
+- Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.3.1](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.1) (2020-06-28)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.0...3.3.1)
 
 **Merged pull requests:**
 
+- \[CHANGELOG\] 3.3.1 [\#28](https://github.com/codenamephp/chef.cookbook.php/pull/28) ([github-actions[bot]](https://github.com/apps/github-actions))
 - Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
+
+## [3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.0) (2020-03-22)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.3.0...3.3.0)
 
 ## [v3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.3.0) (2020-02-23)
 
@@ -31,8 +44,6 @@
 
 **Implemented enhancements:**
 
-- Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
-- Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
 - \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
@@ -45,6 +56,7 @@
 
 **Implemented enhancements:**
 
+- Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
 - Remove apache [\#14](https://github.com/codenamephp/chef.cookbook.php/issues/14)
 - Rework to custom resources [\#13](https://github.com/codenamephp/chef.cookbook.php/issues/13)
 - Add xdebug config [\#11](https://github.com/codenamephp/chef.cookbook.php/issues/11)
@@ -63,6 +75,7 @@
 
 **Implemented enhancements:**
 
+- Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Make default recipe a no-op [\#9](https://github.com/codenamephp/chef.cookbook.php/issues/9)
 - Add xdebug [\#7](https://github.com/codenamephp/chef.cookbook.php/issues/7)
 - Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
