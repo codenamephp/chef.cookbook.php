@@ -9,6 +9,8 @@ jobs:
   calculate_next_version:
     name: Calculate next release version
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.version.outputs.next-version }}
     steps:
       - name: calculate next version
         id: version
@@ -24,9 +26,9 @@ jobs:
       - name: draft release
         uses: release-drafter/release-drafter@v5
         with:
-          version: ${{ format('{0}', needs.calculate_next_version.outputs.next-version) }}
-          tag: ${{ format('{0}', needs.calculate_next_version.outputs.next-version) }}
-          name: ${{ format('{0}', needs.calculate_next_version.outputs.next-version) }}
+          version: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
+          tag: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
+          name: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
@@ -43,7 +45,7 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           exclude_labels: "duplicate,question,invalid,wontfix,skip-changelog"
-          future_release: ${{ format('{0}', needs.calculate_next_version.outputs.next-version) }}
+          future_release: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
           release_branch: 'release'
 
       - name: commit updated changelog
@@ -84,7 +86,7 @@ jobs:
           echo "::set-output name=cookbook_name::$COOKBOOK_NAME"
 
       - name: Bump cookbook version in metadata
-        run: knife spork bump ${{ steps.get_cookbook_name.outputs.cookbook_name }} manual ${{ format('{0}', needs.calculate_next_version.outputs.next-version) }} -o ..
+        run: knife spork bump ${{ steps.get_cookbook_name.outputs.cookbook_name }} manual ${{ format('{0}', needs.calculate_next_version.outputs.version) }} -o ..
 
       - name: Check cookbook version in metadata
         run: knife spork check ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --fail
