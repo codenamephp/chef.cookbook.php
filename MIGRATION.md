@@ -2,6 +2,16 @@
 
 This document contains all the info needed for upgrades of Major releases.
 
+# 3.4
+Support for XDebug 3 was added. This just means that `xdebug.mode=debug,develop` is now set in addition to the XDebug2 settings. This should enable
+the same behaviour as before. This also means that XDebug is also active on CLI. This will change with the next major release.
+
+The plan is that XDebug3 will only be enabled on CLI with explict env var that can just be prepended to any CLI call and is also set by default
+when debugging a script with PHPStorm.
+
+For the actual migration: Just make sure XDebug3 is installed and that PHPStorm is configured correctly (which it should be by default). The XDebug Helper in
+chrome should also still work as before.
+
 # 3
 
 ## Recipes

@@ -23,6 +23,9 @@ The recicpies are now depcracted and will be removed with the next major release
 
 This also means that the attributes will be removed as well since they are only used in the recipies.
 
+As of 3.4 XDebug 2 is also deprecated. Config was added for XDebug 3 so upgrading should already work. The XDebug 2 configs will be removed with the
+next major release.
+
 ## Usage
 
 Create a wrapper cookbook and add this cookbook to your Berksfile/Metadata.
