@@ -4,6 +4,10 @@
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.1...HEAD)
 
+**Implemented enhancements:**
+
+- Added config for XDebug 3 [\#33](https://github.com/codenamephp/chef.cookbook.php/pull/33) ([bastianschwarz](https://github.com/bastianschwarz))
+
 **Merged pull requests:**
 
 - Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
