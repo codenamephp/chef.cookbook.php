@@ -37,7 +37,7 @@ jobs:
         run: |
           export COOKBOOK_NAME=`chef exec ruby -e 'require "chef/cookbook/metadata"; metadata = Chef::Cookbook::Metadata.new; metadata.from_file("metadata.rb"); puts metadata.name'`
           echo "::set-output name=cookbook_name::$COOKBOOK_NAME"
-          
+
       - name: Check cookbook version in metadata
         run: knife spork check ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o .. --fail
 
@@ -45,7 +45,7 @@ jobs:
         run: knife supermarket share ${{ steps.get_cookbook_name.outputs.cookbook_name }} -o ..
 
       - name: Deploy to chef server
-        run: berks upload -e test
+        run: berks install && berks upload -e test
 
       - name: update deployment status
         uses: bobheadxi/deployments@v0.4.3
@@ -91,7 +91,6 @@ jobs:
       - name: Delete tag
         uses: dev-drprasad/delete-tag-and-release@v0.1.2
         with:
-          delete_release: false
           tag_name: ${{ github.event.release.tag_name }}
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
