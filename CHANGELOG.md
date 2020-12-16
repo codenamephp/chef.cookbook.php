@@ -6,6 +6,8 @@
 
 **Implemented enhancements:**
 
+- Composer should have branch property [\#30](https://github.com/codenamephp/chef.cookbook.php/issues/30)
+- Composer source now supports aliases [\#34](https://github.com/codenamephp/chef.cookbook.php/pull/34) ([bastianschwarz](https://github.com/bastianschwarz))
 - Added config for XDebug 3 [\#33](https://github.com/codenamephp/chef.cookbook.php/pull/33) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
