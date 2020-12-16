@@ -22,7 +22,6 @@
 **Merged pull requests:**
 
 - \[CHANGELOG\] 3.3.1 [\#28](https://github.com/codenamephp/chef.cookbook.php/pull/28) ([github-actions[bot]](https://github.com/apps/github-actions))
-- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.0) (2020-03-22)
 
@@ -57,6 +56,7 @@
 
 **Merged pull requests:**
 
+- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 - \[RELEASE 3.1.0\] [\#17](https://github.com/codenamephp/chef.cookbook.php/pull/17) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.0.0) (2018-11-20)
