@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.4.0...HEAD)
+
+**Merged pull requests:**
+
+- Release [\#35](https://github.com/codenamephp/chef.cookbook.php/pull/35) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.4.0) (2020-12-16)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.1...3.4.0)
