@@ -22,7 +22,7 @@ describe 'codenamephp_php_composer' do
 
     it {
       is_expected.to create_if_missing_remote_file('/usr/bin/composer').with(
-        source: 'https://getcomposer.org/composer.phar'
+        source: 'https://getcomposer.org/composer-stable.phar'
       )
     }
   end
@@ -38,6 +38,21 @@ describe 'codenamephp_php_composer' do
     it {
       is_expected.to create_if_missing_remote_file('/some/path').with(
         source: 'http://localhost'
+      )
+    }
+  end
+
+  context 'With custom source alias and binary path' do
+    recipe do
+      codenamephp_php_composer 'composer' do
+        binary_path '/some/path'
+        source '1'
+      end
+    end
+
+    it {
+      is_expected.to create_if_missing_remote_file('/some/path').with(
+        source: 'https://getcomposer.org/composer-1.phar'
       )
     }
   end
