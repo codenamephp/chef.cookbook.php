@@ -13,10 +13,6 @@ Cookbook to install php and apache2
 
 - Chef 13.0+
 
-### Cookbook Depdendencies
-
-- [apt][apt_github]
-
 ## Deprecation
 
 The recicpies are now depcracted and will be removed with the next major release. Just create a wrapper cookbook and use the resources as needed. This is more stable while reducing the amount of "guesswork" that is needed in the first place when creating the recipies.
@@ -62,7 +58,12 @@ This resource can be used to install composer globally.
 
 #### Properties
 - `binary_path`: The path where the binary will be placed, default: `/usr/bin/composer`
-- `source`: The source url from where the binary will be downloaded, default: `https://getcomposer.org/composer.phar`
+- `source`: An alias or a source url from where the binary will be downloaded. If the alias is not recognized the source is used as is so it should be a valid url. default: `stable`, supported aliases:
+  - `stable`
+  - `preview`
+  - `snapshot`
+  - `1`
+  - `2`
 
 #### Examples
 ```ruby
@@ -72,7 +73,7 @@ codenamephp_php_composer 'install composer'
 # Custom source and path
 codenamephp_php_composer 'install composer' do
   binary_path '/my/custom/executable/path'
-  source 'https://my-self-hosted.composer/binary'
+  source 'snapshot'
 end
 ```
 
