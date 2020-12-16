@@ -56,8 +56,8 @@ jobs:
           status: ${{ job.status }}
           deployment_id: ${{ steps.start_deployment.outputs.deployment_id }}
 
-  update_changelog_in_default_branch:
-    name: Update changelog in default branch after published release
+  update_default_branch:
+    name: Update default branch after published release
     runs-on: ubuntu-latest
     needs: deploy
     steps:
@@ -81,6 +81,13 @@ jobs:
           branch: master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create pull request
+        uses: repo-sync/pull-request@v2
+        with:
+          destination_branch: "master"
+          pr_title: "[Deployment] Update default branch"
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   rollback_on_failure:
     name: Rollback on failure
