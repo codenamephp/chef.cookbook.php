@@ -5,6 +5,7 @@
 *.pem
 *.pem.enc
 .travis.yml
+.chef
 
 # OS generated files #
 ######################
