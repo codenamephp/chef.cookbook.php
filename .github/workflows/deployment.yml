@@ -81,12 +81,13 @@ jobs:
           branch: master
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          
+
       - name: Create pull request
         uses: repo-sync/pull-request@v2
         with:
           destination_branch: "master"
           pr_title: "[Deployment] Update default branch"
+          pr_label: "skip-changelog"
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
   rollback_on_failure:
