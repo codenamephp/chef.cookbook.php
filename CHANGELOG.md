@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+## [4.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.0.0) (2020-12-17)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.4.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.4.0...4.0.0)
 
 **Merged pull requests:**
 
@@ -96,6 +96,7 @@
 - Make default recipe a no-op [\#9](https://github.com/codenamephp/chef.cookbook.php/issues/9)
 - Add xdebug [\#7](https://github.com/codenamephp/chef.cookbook.php/issues/7)
 - Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
+- Change apache dependency [\#4](https://github.com/codenamephp/chef.cookbook.php/issues/4)
 
 **Closed issues:**
 
@@ -108,10 +109,6 @@
 ## [v1.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/v1.1.0) (2018-02-11)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.0.0...v1.1.0)
-
-**Implemented enhancements:**
-
-- Change apache dependency [\#4](https://github.com/codenamephp/chef.cookbook.php/issues/4)
 
 **Merged pull requests:**
 
