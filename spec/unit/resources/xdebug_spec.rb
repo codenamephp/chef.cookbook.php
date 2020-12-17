@@ -9,6 +9,8 @@
 require 'spec_helper'
 
 describe 'codenamephp_php_xdebug' do
+  platform 'debian' # https://github.com/chefspec/chefspec/issues/953
+
   step_into :codenamephp_php_xdebug
 
   context 'Install with minimal properties' do

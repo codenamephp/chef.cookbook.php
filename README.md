@@ -13,12 +13,6 @@ Cookbook to install php and apache2
 
 - Chef 13.0+
 
-## Deprecation
-
-The recicpies are now depcracted and will be removed with the next major release. Just create a wrapper cookbook and use the resources as needed. This is more stable while reducing the amount of "guesswork" that is needed in the first place when creating the recipies.
-
-This also means that the attributes will be removed as well since they are only used in the recipies.
-
 ## Usage
 
 Create a wrapper cookbook and add this cookbook to your Berksfile/Metadata.
