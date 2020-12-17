@@ -9,6 +9,8 @@
 require 'spec_helper'
 
 describe 'codenamephp_php_xdebug' do
+  platform 'debian' # https://github.com/chefspec/chefspec/issues/953
+
   step_into :codenamephp_php_xdebug
 
   context 'Install with minimal properties' do
@@ -25,7 +27,7 @@ describe 'codenamephp_php_xdebug' do
         cookbook_file: 'xdebug.ini',
         config_name: 'xdebug-custom.ini',
         php_versions: %w(99 88),
-        services: %w(cli apache2 fpm)
+        services: %w(apache2 fpm)
       )
     }
   end
@@ -45,7 +47,7 @@ describe 'codenamephp_php_xdebug' do
         cookbook_file: 'xdebug.ini',
         config_name: 'xdebug-custom.ini',
         php_versions: %w(99 88),
-        services: %w(cli apache2 fpm)
+        services: %w(apache2 fpm)
       )
     }
   end
