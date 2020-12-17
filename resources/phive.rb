@@ -31,7 +31,7 @@ action :install do
   end
 
   execute 'verify downloaded phar' do
-    command "gpg --keyserver pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify #{new_resource.key_path} #{new_resource.binary_tmp_path}"
+    command "gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify #{new_resource.key_path} #{new_resource.binary_tmp_path}"
     action :nothing
     notifies :create, 'file[move binary from tmp to final path]', :immediately
   end
