@@ -12,6 +12,7 @@
 
 **Merged pull requests:**
 
+- Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
 - Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
 
@@ -86,7 +87,6 @@
 - Make default recipe a no-op [\#9](https://github.com/codenamephp/chef.cookbook.php/issues/9)
 - Add xdebug [\#7](https://github.com/codenamephp/chef.cookbook.php/issues/7)
 - Add support for PHP 7.2 [\#6](https://github.com/codenamephp/chef.cookbook.php/issues/6)
-- Change apache dependency [\#4](https://github.com/codenamephp/chef.cookbook.php/issues/4)
 
 **Closed issues:**
 
@@ -99,6 +99,10 @@
 ## [v1.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/v1.1.0) (2018-02-11)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v1.0.0...v1.1.0)
+
+**Implemented enhancements:**
+
+- Change apache dependency [\#4](https://github.com/codenamephp/chef.cookbook.php/issues/4)
 
 **Merged pull requests:**
 
