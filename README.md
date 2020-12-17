@@ -19,9 +19,6 @@ The recicpies are now depcracted and will be removed with the next major release
 
 This also means that the attributes will be removed as well since they are only used in the recipies.
 
-As of 3.4 XDebug 2 is also deprecated. Config was added for XDebug 3 so upgrading should already work. The XDebug 2 configs will be removed with the
-next major release.
-
 ## Usage
 
 Create a wrapper cookbook and add this cookbook to your Berksfile/Metadata.
@@ -167,7 +164,7 @@ This resource can be used to install xdebug with a default configuraiton.
 - `config_cookbook_file`: The cookbook file that will be used as config, default: `xdebug.ini`
 - `config_cookbook_file_cookbook`: The cookbook the cookbook file will be taken from, default: `codenamephp_php`
 - `add_sury_repository`: If the sury repository should be added, default: `true`
-- `services`: The services the config should be managed for, default: `['cli', 'apache2', 'fpm']`
+- `services`: The services the config should be managed for, default: `['apache2', 'fpm']`
 
 #### Examples
 ```ruby
@@ -196,8 +193,5 @@ Keep in mind that if you set these to false, you need to install the dependencie
 The default cookbook is a No-Op since you want to choose your PHP version and stick to it. Having the default cookbook to install some "random" version could lead
 to unexpected updates and would cause more breaking changes.
 
-[apache2_github]: https://github.com/sous-chefs/apache2
-[apt_github]: https://github.com/chef-cookbooks/apt
-[chef.cookbook.apache2_github]: https://github.com/codenamephp/chef.cookbook.apache2
 [sury_url]: https://deb.sury.org/
 [phive_url]: https://phar.io

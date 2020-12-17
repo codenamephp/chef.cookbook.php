@@ -2,6 +2,11 @@
 
 This document contains all the info needed for upgrades of Major releases.
 
+# 4.0
+
+XDebug 2 config was removed. If you still need to run XDebug 2 for some reason use the resource to install a custom config. XDebug is now not installed
+for CLI anymore since it's easy to enable it if needed and this removes the performance hit when running CLI tools (e.g. composer).
+
 # 3.4
 Support for XDebug 3 was added. This just means that `xdebug.mode=debug,develop` is now set in addition to the XDebug2 settings. This should enable
 the same behaviour as before. This also means that XDebug is also active on CLI. This will change with the next major release.
