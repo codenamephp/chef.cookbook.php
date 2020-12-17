@@ -25,7 +25,7 @@ describe 'codenamephp_php_xdebug' do
         cookbook_file: 'xdebug.ini',
         config_name: 'xdebug-custom.ini',
         php_versions: %w(99 88),
-        services: %w(cli apache2 fpm)
+        services: %w(apache2 fpm)
       )
     }
   end
@@ -45,7 +45,7 @@ describe 'codenamephp_php_xdebug' do
         cookbook_file: 'xdebug.ini',
         config_name: 'xdebug-custom.ini',
         php_versions: %w(99 88),
-        services: %w(cli apache2 fpm)
+        services: %w(apache2 fpm)
       )
     }
   end
