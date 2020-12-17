@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Also deleted attributes since they are not used anymore [\#39](https://github.com/codenamephp/chef.cookbook.php/pull/39) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
 
