@@ -1,5 +1,14 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.4.0...HEAD)
+
+**Merged pull requests:**
+
+- Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
+- Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.4.0) (2020-12-16)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.1...3.4.0)
@@ -12,7 +21,6 @@
 
 **Merged pull requests:**
 
-- Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
 - Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
 
