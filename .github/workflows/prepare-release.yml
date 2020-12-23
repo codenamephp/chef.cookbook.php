@@ -54,8 +54,7 @@ jobs:
           message: "[CHANGELOG] Updated changelog"
           add: "CHANGELOG.md"
           signoff: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
   bump_cookbook_version:
     name: Bump cookbook version and check upload
@@ -100,5 +99,4 @@ jobs:
           message: "[METADATA] Updated version"
           add: "metadata.rb"
           signoff: true
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}

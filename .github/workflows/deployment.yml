@@ -79,8 +79,7 @@ jobs:
           add: "CHANGELOG.md"
           signoff: true
           branch: master
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          token: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Create pull request
         uses: repo-sync/pull-request@v2
