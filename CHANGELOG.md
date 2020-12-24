@@ -7,6 +7,7 @@
 **Merged pull requests:**
 
 - Also deleted attributes since they are not used anymore [\#39](https://github.com/codenamephp/chef.cookbook.php/pull/39) ([bastianschwarz](https://github.com/bastianschwarz))
+- Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.4.0) (2020-12-16)
@@ -15,12 +16,12 @@
 
 **Implemented enhancements:**
 
+- Composer should have branch property [\#30](https://github.com/codenamephp/chef.cookbook.php/issues/30)
 - Composer source now supports aliases [\#34](https://github.com/codenamephp/chef.cookbook.php/pull/34) ([bastianschwarz](https://github.com/bastianschwarz))
 - Added config for XDebug 3 [\#33](https://github.com/codenamephp/chef.cookbook.php/pull/33) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 
-- Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
 
@@ -31,6 +32,7 @@
 **Merged pull requests:**
 
 - \[CHANGELOG\] 3.3.1 [\#28](https://github.com/codenamephp/chef.cookbook.php/pull/28) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.0) (2020-03-22)
 
@@ -65,7 +67,6 @@
 
 **Merged pull requests:**
 
-- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 - \[RELEASE 3.1.0\] [\#17](https://github.com/codenamephp/chef.cookbook.php/pull/17) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.0.0) (2018-11-20)
@@ -74,7 +75,6 @@
 
 **Implemented enhancements:**
 
-- Composer should have branch property [\#30](https://github.com/codenamephp/chef.cookbook.php/issues/30)
 - Remove apache [\#14](https://github.com/codenamephp/chef.cookbook.php/issues/14)
 - Rework to custom resources [\#13](https://github.com/codenamephp/chef.cookbook.php/issues/13)
 - Add xdebug config [\#11](https://github.com/codenamephp/chef.cookbook.php/issues/11)
