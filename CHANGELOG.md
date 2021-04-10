@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+## [4.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.1.0) (2021-04-10)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.0.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.0.0...4.1.0)
 
 **Implemented enhancements:**
 
