@@ -7,10 +7,11 @@ property :key_uri, String, default: 'https://phar.io/releases/phive.phar.asc', d
 property :key_path, String, default: '/tmp/phive.phar.asc', description: 'Local path to where the phive key is saved for verification'
 property :install_php_dependencies, [true, false], default: true, description: 'Phive needs php and some extensions to run.
   Set this to false if you want to install these yourself. If true, php, php-xml and php-mbstring will be installed.'
+property :php_version, String, default: 'php', description: 'The desired php version that will be used when installing the dependencies. This is usesd as prefix, e.g. php7.4 -> php7.4-curl'
 
 action :install do
   codenamephp_php_package 'install needed extensions' do
-    additional_packages %w(php-xml php-mbstring)
+    additional_packages get_dependency_package_names_with_php_version(%w(xml mbstring curl), new_resource.php_version)
     only_if new_resource.install_php_dependencies.to_s
   end
 
@@ -60,5 +61,11 @@ action :uninstall do
   file 'delete phive.phar from binary path' do
     path new_resource.binary_path
     action :delete
+  end
+end
+
+action_class do
+  def get_dependency_package_names_with_php_version(packages, php_version)
+    packages.map { |package| "php#{php_version.sub('php', '')}-#{package}" }
   end
 end

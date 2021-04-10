@@ -23,4 +23,8 @@ control 'php-1.0' do
   describe package('php7.4-gd') do
     it { should be_installed }
   end
+
+  describe package('php8.0-cli') do
+    it { should be_installed }
+  end
 end
