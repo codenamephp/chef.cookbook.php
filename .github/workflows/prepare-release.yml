@@ -29,6 +29,7 @@ jobs:
           version: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
           tag: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
           name: ${{ format('{0}', needs.calculate_next_version.outputs.version) }}
+          commitish: 'release'
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
