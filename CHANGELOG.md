@@ -22,6 +22,7 @@
 - Also deleted attributes since they are not used anymore [\#39](https://github.com/codenamephp/chef.cookbook.php/pull/39) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
+- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.4.0) (2020-12-16)
 
@@ -45,7 +46,6 @@
 **Merged pull requests:**
 
 - \[CHANGELOG\] 3.3.1 [\#28](https://github.com/codenamephp/chef.cookbook.php/pull/28) ([github-actions[bot]](https://github.com/apps/github-actions))
-- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.0) (2020-03-22)
 
