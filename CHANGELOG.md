@@ -1,5 +1,13 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.0.0...HEAD)
+
+**Implemented enhancements:**
+
+- Added php\_version property to phive resource [\#48](https://github.com/codenamephp/chef.cookbook.php/pull/48) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [4.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.0.0) (2020-12-17)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.4.0...4.0.0)
