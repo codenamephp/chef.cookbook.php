@@ -182,7 +182,30 @@ This resources installs [Phive][phive_url] as global command line tool
 - `key_uri`: The uri from where the key for verification will be downloaded, default: `'https://phar.io/releases/phive.phar.asc'`
 - `key_path`: The path to where the key will be downloaded to prior to verifcation, default: `'/tmp/phive.phar.asc'`
 - `install_php_dependencies`: Flag if the dependencies (php and some extensions) should be installed, default: true
-Keep in mind that if you set these to false, you need to install the dependencies yourself or Phive might not work
+  Keep in mind that if you set these to false, you need to install the dependencies yourself or Phive might not work
+- `php_version`: The desired php version that will be used when installing the dependencies. This is usesd as prefix, e.g. php7.4 -> php7.4-curl'
+  The 'php' is normalized so you can either pass 'phpX.X' or just 'X.X'
+
+#### Examples
+```ruby
+# Minimal config
+codenamephp_php_phive 'install phive'
+```
+
+```ruby
+# With custom php version
+codenamephp_php_phive 'install phive' do
+  php_version '8.0'
+end
+```
+
+```ruby
+# Without php dependencies
+codenamephp_php_phive 'install phive' do
+  install_php_dependencies false
+end
+```
+
 ## Default
 The default cookbook is a No-Op since you want to choose your PHP version and stick to it. Having the default cookbook to install some "random" version could lead
 to unexpected updates and would cause more breaking changes.

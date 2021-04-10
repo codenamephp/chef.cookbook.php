@@ -83,10 +83,15 @@ describe 'codenamephp_php_phive' do
         source 'https://some/source/uri'
         key_uri 'https://some/key/uri'
         key_path '/some/key/path'
+        php_version '5.6'
       end
     end
 
     it {
+      is_expected.to install_codenamephp_php_package('install needed extensions').with(
+        additional_packages: %w(php5.6-xml php5.6-mbstring php5.6-curl)
+      )
+
       is_expected.to create_remote_file('/some/temp/path').with(
         source: 'https://some/source/uri'
       )
@@ -109,6 +114,26 @@ describe 'codenamephp_php_phive' do
 
       is_expected.to delete_file('delete tmp key').with(
         path: '/some/key/path'
+      )
+    }
+  end
+
+  context 'Install with php_version with php prefix' do
+    before(:example) do
+      stub_command('test -e /usr/bin/phive').and_return(false)
+      stub_command('test -e /tmp/phive.phar').and_return(true)
+      stub_command('true').and_return(true) # yeah, I don't know either ...
+    end
+
+    recipe do
+      codenamephp_php_phive 'phive' do
+        php_version 'php5.6'
+      end
+    end
+
+    it {
+      is_expected.to install_codenamephp_php_package('install needed extensions').with(
+        additional_packages: %w(php5.6-xml php5.6-mbstring php5.6-curl)
       )
     }
   end
