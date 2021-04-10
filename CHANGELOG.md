@@ -8,6 +8,10 @@
 
 - Added php\_version property to phive resource [\#48](https://github.com/codenamephp/chef.cookbook.php/pull/48) ([bastianschwarz](https://github.com/bastianschwarz))
 
+**Merged pull requests:**
+
+- Bump bobheadxi/deployments from v0.4.3 to v0.5.2 [\#47](https://github.com/codenamephp/chef.cookbook.php/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [4.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.0.0) (2020-12-17)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.4.0...4.0.0)
@@ -30,7 +34,6 @@
 
 **Merged pull requests:**
 
-- Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.1](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.1) (2020-06-28)
@@ -75,6 +78,7 @@
 
 **Merged pull requests:**
 
+- Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - \[RELEASE 3.1.0\] [\#17](https://github.com/codenamephp/chef.cookbook.php/pull/17) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.0.0) (2018-11-20)
