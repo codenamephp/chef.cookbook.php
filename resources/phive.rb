@@ -10,7 +10,7 @@ property :install_php_dependencies, [true, false], default: true, description: '
 
 action :install do
   codenamephp_php_package 'install needed extensions' do
-    additional_packages %w(php-xml php-mbstring)
+    additional_packages %w(php-xml php-mbstring php-curl)
     only_if new_resource.install_php_dependencies.to_s
   end
 

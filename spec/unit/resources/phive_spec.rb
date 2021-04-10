@@ -30,7 +30,7 @@ describe 'codenamephp_php_phive' do
 
     it {
       is_expected.to install_codenamephp_php_package('install needed extensions').with(
-        additional_packages: %w(php-xml php-mbstring)
+        additional_packages: %w(php-xml php-mbstring php-curl)
       )
 
       is_expected.to create_remote_file('/tmp/phive.phar').with(
