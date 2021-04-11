@@ -6,7 +6,7 @@ property :source, String, default: 'https://phar.io/releases/phive.phar', descri
 property :key_uri, String, default: 'https://phar.io/releases/phive.phar.asc', description: 'URI from where the key for verification will be downloaded'
 property :key_path, String, default: '/tmp/phive.phar.asc', description: 'Local path to where the phive key is saved for verification'
 property :install_php_dependencies, [true, false], default: true, description: 'Phive needs php and some extensions to run.
-  Set this to false if you want to install these yourself. If true, php, php-xml and php-mbstring will be installed.'
+  Set this to false if you want to install these yourself. If true, cli, xml, mbstring and curl will be installed with respect to the given php version.'
 property :php_version, String, default: 'php', description: 'The desired php version that will be used when installing the dependencies. This is usesd as prefix, e.g. php7.4 -> php7.4-curl'
 
 action :install do
