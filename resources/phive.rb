@@ -11,6 +11,7 @@ property :php_version, String, default: 'php', description: 'The desired php ver
 
 action :install do
   codenamephp_php_package 'install needed extensions' do
+    package_name get_dependency_package_names_with_php_version(%w(cli), new_resource.php_version).first
     additional_packages get_dependency_package_names_with_php_version(%w(xml mbstring curl), new_resource.php_version)
     only_if new_resource.install_php_dependencies.to_s
   end

@@ -30,6 +30,7 @@ describe 'codenamephp_php_phive' do
 
     it {
       is_expected.to install_codenamephp_php_package('install needed extensions').with(
+        package_name: 'php-cli',
         additional_packages: %w(php-xml php-mbstring php-curl)
       )
 
@@ -89,6 +90,7 @@ describe 'codenamephp_php_phive' do
 
     it {
       is_expected.to install_codenamephp_php_package('install needed extensions').with(
+        package_name: 'php5.6-cli',
         additional_packages: %w(php5.6-xml php5.6-mbstring php5.6-curl)
       )
 
@@ -133,6 +135,7 @@ describe 'codenamephp_php_phive' do
 
     it {
       is_expected.to install_codenamephp_php_package('install needed extensions').with(
+        package_name: 'php5.6-cli',
         additional_packages: %w(php5.6-xml php5.6-mbstring php5.6-curl)
       )
     }
@@ -152,9 +155,7 @@ describe 'codenamephp_php_phive' do
     end
 
     it {
-      is_expected.to_not install_codenamephp_php_package('install needed extensions').with(
-        additional_packages: %w(php-xml php-mbstring)
-      )
+      is_expected.to_not install_codenamephp_php_package('install needed extensions')
     }
   end
 
