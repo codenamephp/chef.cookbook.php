@@ -1,5 +1,18 @@
 # Changelog
 
+## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.1.0...HEAD)
+
+**Fixed bugs:**
+
+- Need to pass php version for the package itself [\#50](https://github.com/codenamephp/chef.cookbook.php/issues/50)
+- PHPVersion is now passed as package name when installing php [\#51](https://github.com/codenamephp/chef.cookbook.php/pull/51) ([bastianschwarz](https://github.com/bastianschwarz))
+
+**Merged pull requests:**
+
+- Bump bobheadxi/deployments from v0.4.3 to v0.5.2 [\#47](https://github.com/codenamephp/chef.cookbook.php/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
+
 ## [4.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.1.0) (2021-04-10)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.0.0...4.1.0)
@@ -10,7 +23,6 @@
 
 **Merged pull requests:**
 
-- Bump bobheadxi/deployments from v0.4.3 to v0.5.2 [\#47](https://github.com/codenamephp/chef.cookbook.php/pull/47) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump dev-drprasad/delete-tag-and-release from v0.1.3 to v0.2.0 [\#46](https://github.com/codenamephp/chef.cookbook.php/pull/46) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [4.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.0.0) (2020-12-17)
@@ -22,7 +34,6 @@
 - Also deleted attributes since they are not used anymore [\#39](https://github.com/codenamephp/chef.cookbook.php/pull/39) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
-- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.4.0) (2020-12-16)
 
@@ -46,6 +57,7 @@
 **Merged pull requests:**
 
 - \[CHANGELOG\] 3.3.1 [\#28](https://github.com/codenamephp/chef.cookbook.php/pull/28) ([github-actions[bot]](https://github.com/apps/github-actions))
+- Updated build [\#27](https://github.com/codenamephp/chef.cookbook.php/pull/27) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.0) (2020-03-22)
 
