@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+unified_mode true
+
 property :binary_path, String, default: '/usr/bin/phive', description: 'Path to where the phive binary will be saved after verification'
 property :binary_tmp_path, String, default: '/tmp/phive.phar', description: 'Path to where the phive baniray will be saved for verification'
 property :source, String, default: 'https://phar.io/releases/phive.phar', description: 'URL from where the phive binary (phar) will be downloaded'
@@ -33,7 +35,7 @@ action :install do
   end
 
   execute 'verify downloaded phar' do
-    command "gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify #{new_resource.key_path} #{new_resource.binary_tmp_path}"
+    command "gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify #{new_resource.key_path} #{new_resource.binary_tmp_path}"
     action :nothing
     notifies :create, 'file[move binary from tmp to final path]', :immediately
   end
