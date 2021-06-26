@@ -1,8 +1,8 @@
 # Changelog
 
-## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
+## [4.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.2.0) (2021-06-26)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.1.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.1.0...4.2.0)
 
 **Implemented enhancements:**
 
@@ -12,6 +12,10 @@
 
 - Need to pass php version for the package itself [\#50](https://github.com/codenamephp/chef.cookbook.php/issues/50)
 - PHPVersion is now passed as package name when installing php [\#51](https://github.com/codenamephp/chef.cookbook.php/pull/51) ([bastianschwarz](https://github.com/bastianschwarz))
+
+**Closed issues:**
+
+- Deprecation CHEF-33 [\#53](https://github.com/codenamephp/chef.cookbook.php/issues/53)
 
 **Merged pull requests:**
 
@@ -68,16 +72,6 @@
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.3.0...3.3.0)
 
-**Implemented enhancements:**
-
-- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
-
-**Merged pull requests:**
-
-- \[RELEASE 3.3.0\] [\#25](https://github.com/codenamephp/chef.cookbook.php/pull/25) ([bastianschwarz](https://github.com/bastianschwarz))
-- \[RELEASE 3.1.0\] [\#17](https://github.com/codenamephp/chef.cookbook.php/pull/17) ([bastianschwarz](https://github.com/bastianschwarz))
-- \[RELEASE 3.0.0\] [\#15](https://github.com/codenamephp/chef.cookbook.php/pull/15) ([bastianschwarz](https://github.com/bastianschwarz))
-
 ## [v3.3.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.3.0) (2020-02-23)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.2.0...v3.3.0)
@@ -91,6 +85,10 @@
 - Add services to xdebug resource [\#24](https://github.com/codenamephp/chef.cookbook.php/issues/24)
 - Deprecate recipes [\#23](https://github.com/codenamephp/chef.cookbook.php/issues/23)
 
+**Merged pull requests:**
+
+- \[RELEASE 3.3.0\] [\#25](https://github.com/codenamephp/chef.cookbook.php/pull/25) ([bastianschwarz](https://github.com/bastianschwarz))
+
 ## [v3.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.2.0) (2019-12-06)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/v3.0.0...v3.2.0)
@@ -99,6 +97,11 @@
 
 - Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
+- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
+
+**Merged pull requests:**
+
+- \[RELEASE 3.1.0\] [\#17](https://github.com/codenamephp/chef.cookbook.php/pull/17) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v3.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v3.0.0) (2018-11-20)
 
@@ -113,6 +116,10 @@
 **Fixed bugs:**
 
 - Duplicate property [\#12](https://github.com/codenamephp/chef.cookbook.php/issues/12)
+
+**Merged pull requests:**
+
+- \[RELEASE 3.0.0\] [\#15](https://github.com/codenamephp/chef.cookbook.php/pull/15) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [v2.0.0](https://github.com/codenamephp/chef.cookbook.php/tree/v2.0.0) (2018-08-18)
 
