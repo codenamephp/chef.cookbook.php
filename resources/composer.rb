@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 
+unified_mode true
+
 property :binary_path, String, default: '/usr/bin/composer', description: 'Path to where the composer binary will be saved'
 property :source, String, default: 'stable', description: 'URL from where the composer binary (phar) will be downloaded'
 
