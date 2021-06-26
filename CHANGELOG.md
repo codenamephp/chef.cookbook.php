@@ -2,7 +2,7 @@
 
 ## [Unreleased](https://github.com/codenamephp/chef.cookbook.php/tree/HEAD)
 
-[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.1.0...HEAD)
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.2.0...HEAD)
 
 **Implemented enhancements:**
 
@@ -10,12 +10,23 @@
 
 **Fixed bugs:**
 
-- Need to pass php version for the package itself [\#50](https://github.com/codenamephp/chef.cookbook.php/issues/50)
 - PHPVersion is now passed as package name when installing php [\#51](https://github.com/codenamephp/chef.cookbook.php/pull/51) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 
 - Bump bobheadxi/deployments from 0.5.2 to 0.6.0 [\#59](https://github.com/codenamephp/chef.cookbook.php/pull/59) ([dependabot[bot]](https://github.com/apps/dependabot))
+
+## [4.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.2.0) (2021-06-26)
+
+[Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/4.1.0...4.2.0)
+
+**Fixed bugs:**
+
+- Need to pass php version for the package itself [\#50](https://github.com/codenamephp/chef.cookbook.php/issues/50)
+
+**Closed issues:**
+
+- Deprecation CHEF-33 [\#53](https://github.com/codenamephp/chef.cookbook.php/issues/53)
 
 ## [4.1.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.1.0) (2021-04-10)
 
