@@ -47,7 +47,7 @@ describe 'codenamephp_php_phive' do
       expect(chef_run.remote_file('/tmp/phive.phar.asc')).to notify('execute[verify downloaded phar]').to(:run).immediately
 
       is_expected.to nothing_execute('verify downloaded phar').with(
-        command: 'gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify /tmp/phive.phar.asc /tmp/phive.phar'
+        command: 'gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify /tmp/phive.phar.asc /tmp/phive.phar'
       )
 
       expect(chef_run.execute('verify downloaded phar')).to notify('file[move binary from tmp to final path]').to(:create).immediately
@@ -103,7 +103,7 @@ describe 'codenamephp_php_phive' do
       )
 
       is_expected.to nothing_execute('verify downloaded phar').with(
-        command: 'gpg --keyserver hkps.pool.sks-keyservers.net --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify /some/key/path /some/temp/path'
+        command: 'gpg --keyserver hkps://keys.openpgp.org --recv-keys 0x9D8A98B29B2D5D79 && gpg --verify /some/key/path /some/temp/path'
       )
 
       is_expected.to nothing_file('move binary from tmp to final path').with(
