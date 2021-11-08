@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump tubone24/update\_release from 1.1.0 to 1.3.1 [\#63](https://github.com/codenamephp/chef.cookbook.php/pull/63) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump bobheadxi/deployments from 0.6.0 to 0.6.1 [\#62](https://github.com/codenamephp/chef.cookbook.php/pull/62) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [4.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.2.0) (2021-06-26)
