@@ -6,6 +6,7 @@
 
 **Merged pull requests:**
 
+- Bump bobheadxi/deployments from 0.6.0 to 0.6.2 [\#66](https://github.com/codenamephp/chef.cookbook.php/pull/66) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Bump tubone24/update\_release from 1.1.0 to 1.3.1 [\#65](https://github.com/codenamephp/chef.cookbook.php/pull/65) ([dependabot[bot]](https://github.com/apps/dependabot))
 
 ## [4.2.0](https://github.com/codenamephp/chef.cookbook.php/tree/4.2.0) (2021-06-26)
@@ -49,7 +50,6 @@
 **Merged pull requests:**
 
 - Also deleted attributes since they are not used anymore [\#39](https://github.com/codenamephp/chef.cookbook.php/pull/39) ([bastianschwarz](https://github.com/bastianschwarz))
-- Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Removed XDebug 2  [\#36](https://github.com/codenamephp/chef.cookbook.php/pull/36) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.4.0](https://github.com/codenamephp/chef.cookbook.php/tree/3.4.0) (2020-12-16)
@@ -64,12 +64,17 @@
 
 **Merged pull requests:**
 
+- Removed recipes [\#37](https://github.com/codenamephp/chef.cookbook.php/pull/37) ([bastianschwarz](https://github.com/bastianschwarz))
 - Bump tubone24/update\_release from v1.0 to v1.1.0 [\#32](https://github.com/codenamephp/chef.cookbook.php/pull/32) ([dependabot[bot]](https://github.com/apps/dependabot))
 - Moving from Travis to Github actions [\#31](https://github.com/codenamephp/chef.cookbook.php/pull/31) ([bastianschwarz](https://github.com/bastianschwarz))
 
 ## [3.3.1](https://github.com/codenamephp/chef.cookbook.php/tree/3.3.1) (2020-06-28)
 
 [Full Changelog](https://github.com/codenamephp/chef.cookbook.php/compare/3.3.0...3.3.1)
+
+**Implemented enhancements:**
+
+- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 
@@ -105,7 +110,6 @@
 
 - Add php7.4 [\#18](https://github.com/codenamephp/chef.cookbook.php/issues/18)
 - Add php 7.3 [\#16](https://github.com/codenamephp/chef.cookbook.php/issues/16)
-- \[RELEASE 3.2.0\] [\#19](https://github.com/codenamephp/chef.cookbook.php/pull/19) ([bastianschwarz](https://github.com/bastianschwarz))
 
 **Merged pull requests:**
 
